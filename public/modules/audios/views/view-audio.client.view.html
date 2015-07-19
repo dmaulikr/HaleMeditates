@@ -1,0 +1,18 @@
+<section data-ng-controller="AudiosController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="audio.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == audio.user._id))">
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="audio.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="audio.user.displayName"></span>
+		</em>
+	</small>
+</section>

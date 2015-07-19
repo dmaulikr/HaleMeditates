@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		110D756E1B26CB620079273E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D756D1B26CB620079273E /* AppDelegate.swift */; };
+		110D75701B26CB620079273E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D756F1B26CB620079273E /* SignInViewController.swift */; };
+		110D75731B26CB620079273E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110D75711B26CB620079273E /* Main.storyboard */; };
+		110D75751B26CB620079273E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110D75741B26CB620079273E /* Images.xcassets */; };
+		110D75781B26CB620079273E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110D75761B26CB620079273E /* LaunchScreen.xib */; };
+		110D75841B26CB620079273E /* Hale_MeditatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D75831B26CB620079273E /* Hale_MeditatesTests.swift */; };
+		1137F0831B3F9A2A0068DE5C /* JoyrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */; };
+		1137F0851B3FB6FE0068DE5C /* SessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0841B3FB6FE0068DE5C /* SessionsTableViewController.swift */; };
+		1137F0871B3FBA840068DE5C /* CallToActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */; };
+		1137F0891B408FA30068DE5C /* TimedMeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */; };
+		1137F08C1B4092A10068DE5C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F08B1B4092A10068DE5C /* TimerView.swift */; };
+		119818441B2957650008FF75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119818431B2957650008FF75 /* SignUpViewController.swift */; };
+		11A984821B50FCEB005DF3D4 /* PreSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */; };
+		11A984841B50FCFE005DF3D4 /* MeditationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */; };
+		11A984861B50FEDC005DF3D4 /* MeditationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984851B50FEDC005DF3D4 /* MeditationSettings.swift */; };
+		11A984891B51E738005DF3D4 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984881B51E738005DF3D4 /* JournalViewController.swift */; };
+		11A9848B1B51FE49005DF3D4 /* JournalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A9848A1B51FE49005DF3D4 /* JournalsTableViewController.swift */; };
+		11A9848D1B51FEA4005DF3D4 /* JournalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A9848C1B51FEA4005DF3D4 /* JournalsTableViewCell.swift */; };
+		11A9848F1B520591005DF3D4 /* JournalsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A9848E1B520591005DF3D4 /* JournalsContainerViewController.swift */; };
+		11A984921B520901005DF3D4 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984911B520901005DF3D4 /* JournalEntry.swift */; };
+		11A984941B52100C005DF3D4 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984931B52100C005DF3D4 /* DateUtil.swift */; };
+		11A984961B5225BE005DF3D4 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984951B5225BE005DF3D4 /* DataContext.swift */; };
+		11BD2B2C1B33F6E100F2564B /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD2B2B1B33F6E100F2564B /* UIUtil.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		110D757E1B26CB620079273E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 110D75601B26CB620079273E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 110D75671B26CB620079273E;
+			remoteInfo = "Hale Meditates";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		110D75681B26CB620079273E /* Hale Meditates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hale Meditates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		110D756C1B26CB620079273E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		110D756D1B26CB620079273E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		110D756F1B26CB620079273E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		110D75721B26CB620079273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		110D75741B26CB620079273E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		110D75771B26CB620079273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		110D757D1B26CB620079273E /* Hale MeditatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hale MeditatesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		110D75821B26CB620079273E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		110D75831B26CB620079273E /* Hale_MeditatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hale_MeditatesTests.swift; sourceTree = "<group>"; };
+		1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoyrideViewController.swift; sourceTree = "<group>"; };
+		1137F0841B3FB6FE0068DE5C /* SessionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsTableViewController.swift; sourceTree = "<group>"; };
+		1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallToActionViewController.swift; sourceTree = "<group>"; };
+		1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedMeditationViewController.swift; sourceTree = "<group>"; };
+		1137F08B1B4092A10068DE5C /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		119818431B2957650008FF75 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreSessionViewController.swift; sourceTree = "<group>"; };
+		11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationSettingsViewController.swift; sourceTree = "<group>"; };
+		11A984851B50FEDC005DF3D4 /* MeditationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationSettings.swift; sourceTree = "<group>"; };
+		11A984881B51E738005DF3D4 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		11A9848A1B51FE49005DF3D4 /* JournalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalsTableViewController.swift; sourceTree = "<group>"; };
+		11A9848C1B51FEA4005DF3D4 /* JournalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalsTableViewCell.swift; sourceTree = "<group>"; };
+		11A9848E1B520591005DF3D4 /* JournalsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalsContainerViewController.swift; sourceTree = "<group>"; };
+		11A984911B520901005DF3D4 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		11A984931B52100C005DF3D4 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		11A984951B5225BE005DF3D4 /* DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
+		11BD2B2B1B33F6E100F2564B /* UIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtil.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		110D75651B26CB620079273E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		110D757A1B26CB620079273E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		110D755F1B26CB620079273E = {
+			isa = PBXGroup;
+			children = (
+				110D756A1B26CB620079273E /* Hale Meditates */,
+				110D75801B26CB620079273E /* Hale MeditatesTests */,
+				110D75691B26CB620079273E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		110D75691B26CB620079273E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				110D75681B26CB620079273E /* Hale Meditates.app */,
+				110D757D1B26CB620079273E /* Hale MeditatesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		110D756A1B26CB620079273E /* Hale Meditates */ = {
+			isa = PBXGroup;
+			children = (
+				11A984901B5208E0005DF3D4 /* Models */,
+				1137F08A1B40928B0068DE5C /* Views */,
+				1137F0801B3F99430068DE5C /* Controllers */,
+				11A984971B5225CE005DF3D4 /* Classes */,
+				110D75711B26CB620079273E /* Main.storyboard */,
+				110D75741B26CB620079273E /* Images.xcassets */,
+				110D75761B26CB620079273E /* LaunchScreen.xib */,
+				110D756B1B26CB620079273E /* Supporting Files */,
+			);
+			path = "Hale Meditates";
+			sourceTree = "<group>";
+		};
+		110D756B1B26CB620079273E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				110D756C1B26CB620079273E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		110D75801B26CB620079273E /* Hale MeditatesTests */ = {
+			isa = PBXGroup;
+			children = (
+				110D75831B26CB620079273E /* Hale_MeditatesTests.swift */,
+				110D75811B26CB620079273E /* Supporting Files */,
+			);
+			path = "Hale MeditatesTests";
+			sourceTree = "<group>";
+		};
+		110D75811B26CB620079273E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				110D75821B26CB620079273E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1137F0801B3F99430068DE5C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				110D756F1B26CB620079273E /* SignInViewController.swift */,
+				119818431B2957650008FF75 /* SignUpViewController.swift */,
+				1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */,
+				1137F0841B3FB6FE0068DE5C /* SessionsTableViewController.swift */,
+				1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */,
+				1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */,
+				11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */,
+				11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */,
+				11A984881B51E738005DF3D4 /* JournalViewController.swift */,
+				11A9848A1B51FE49005DF3D4 /* JournalsTableViewController.swift */,
+				11A9848E1B520591005DF3D4 /* JournalsContainerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1137F08A1B40928B0068DE5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1137F08B1B4092A10068DE5C /* TimerView.swift */,
+				11A9848C1B51FEA4005DF3D4 /* JournalsTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		11A984901B5208E0005DF3D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11A984851B50FEDC005DF3D4 /* MeditationSettings.swift */,
+				11A984911B520901005DF3D4 /* JournalEntry.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		11A984971B5225CE005DF3D4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				110D756D1B26CB620079273E /* AppDelegate.swift */,
+				11BD2B2B1B33F6E100F2564B /* UIUtil.swift */,
+				11A984931B52100C005DF3D4 /* DateUtil.swift */,
+				11A984951B5225BE005DF3D4 /* DataContext.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		110D75671B26CB620079273E /* Hale Meditates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 110D75871B26CB620079273E /* Build configuration list for PBXNativeTarget "Hale Meditates" */;
+			buildPhases = (
+				110D75641B26CB620079273E /* Sources */,
+				110D75651B26CB620079273E /* Frameworks */,
+				110D75661B26CB620079273E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hale Meditates";
+			productName = "Hale Meditates";
+			productReference = 110D75681B26CB620079273E /* Hale Meditates.app */;
+			productType = "com.apple.product-type.application";
+		};
+		110D757C1B26CB620079273E /* Hale MeditatesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 110D758A1B26CB620079273E /* Build configuration list for PBXNativeTarget "Hale MeditatesTests" */;
+			buildPhases = (
+				110D75791B26CB620079273E /* Sources */,
+				110D757A1B26CB620079273E /* Frameworks */,
+				110D757B1B26CB620079273E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				110D757F1B26CB620079273E /* PBXTargetDependency */,
+			);
+			name = "Hale MeditatesTests";
+			productName = "Hale MeditatesTests";
+			productReference = 110D757D1B26CB620079273E /* Hale MeditatesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		110D75601B26CB620079273E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = koait;
+				TargetAttributes = {
+					110D75671B26CB620079273E = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = BM7DCU5YJ8;
+					};
+					110D757C1B26CB620079273E = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 110D75671B26CB620079273E;
+					};
+				};
+			};
+			buildConfigurationList = 110D75631B26CB620079273E /* Build configuration list for PBXProject "Hale Meditates" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 110D755F1B26CB620079273E;
+			productRefGroup = 110D75691B26CB620079273E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				110D75671B26CB620079273E /* Hale Meditates */,
+				110D757C1B26CB620079273E /* Hale MeditatesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		110D75661B26CB620079273E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				110D75731B26CB620079273E /* Main.storyboard in Resources */,
+				110D75781B26CB620079273E /* LaunchScreen.xib in Resources */,
+				110D75751B26CB620079273E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		110D757B1B26CB620079273E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		110D75641B26CB620079273E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A9848F1B520591005DF3D4 /* JournalsContainerViewController.swift in Sources */,
+				11A984821B50FCEB005DF3D4 /* PreSessionViewController.swift in Sources */,
+				1137F08C1B4092A10068DE5C /* TimerView.swift in Sources */,
+				119818441B2957650008FF75 /* SignUpViewController.swift in Sources */,
+				1137F0871B3FBA840068DE5C /* CallToActionViewController.swift in Sources */,
+				110D75701B26CB620079273E /* SignInViewController.swift in Sources */,
+				11A984841B50FCFE005DF3D4 /* MeditationSettingsViewController.swift in Sources */,
+				1137F0851B3FB6FE0068DE5C /* SessionsTableViewController.swift in Sources */,
+				11A984921B520901005DF3D4 /* JournalEntry.swift in Sources */,
+				11A9848D1B51FEA4005DF3D4 /* JournalsTableViewCell.swift in Sources */,
+				11A9848B1B51FE49005DF3D4 /* JournalsTableViewController.swift in Sources */,
+				110D756E1B26CB620079273E /* AppDelegate.swift in Sources */,
+				1137F0831B3F9A2A0068DE5C /* JoyrideViewController.swift in Sources */,
+				11A984961B5225BE005DF3D4 /* DataContext.swift in Sources */,
+				1137F0891B408FA30068DE5C /* TimedMeditationViewController.swift in Sources */,
+				11A984861B50FEDC005DF3D4 /* MeditationSettings.swift in Sources */,
+				11A984941B52100C005DF3D4 /* DateUtil.swift in Sources */,
+				11A984891B51E738005DF3D4 /* JournalViewController.swift in Sources */,
+				11BD2B2C1B33F6E100F2564B /* UIUtil.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		110D75791B26CB620079273E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				110D75841B26CB620079273E /* Hale_MeditatesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		110D757F1B26CB620079273E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 110D75671B26CB620079273E /* Hale Meditates */;
+			targetProxy = 110D757E1B26CB620079273E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		110D75711B26CB620079273E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				110D75721B26CB620079273E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		110D75761B26CB620079273E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				110D75771B26CB620079273E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		110D75851B26CB620079273E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		110D75861B26CB620079273E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		110D75881B26CB620079273E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Hale Meditates/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		110D75891B26CB620079273E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Hale Meditates/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		110D758B1B26CB620079273E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hale MeditatesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hale Meditates.app/Hale Meditates";
+			};
+			name = Debug;
+		};
+		110D758C1B26CB620079273E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hale MeditatesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hale Meditates.app/Hale Meditates";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		110D75631B26CB620079273E /* Build configuration list for PBXProject "Hale Meditates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110D75851B26CB620079273E /* Debug */,
+				110D75861B26CB620079273E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		110D75871B26CB620079273E /* Build configuration list for PBXNativeTarget "Hale Meditates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110D75881B26CB620079273E /* Debug */,
+				110D75891B26CB620079273E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		110D758A1B26CB620079273E /* Build configuration list for PBXNativeTarget "Hale MeditatesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110D758B1B26CB620079273E /* Debug */,
+				110D758C1B26CB620079273E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 110D75601B26CB620079273E /* Project object */;
+}
