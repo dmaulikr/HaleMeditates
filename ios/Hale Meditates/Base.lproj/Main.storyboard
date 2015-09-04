@@ -1154,7 +1154,7 @@ Preperation</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="C2d-NY-x2y" kind="show" identifier="ShowJournalViewController" id="dho-2a-Z4J"/>
+                                    <action selector="finishMeditation" destination="JLb-a0-6PB" eventType="touchUpInside" id="4qw-Cn-xra"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tU2-Jn-MHh" userLabel="Back">
@@ -1197,7 +1197,7 @@ Preperation</string>
         <!--Journal View Controller-->
         <scene sceneID="PJO-6M-OUN">
             <objects>
-                <viewController id="C2d-NY-x2y" customClass="JournalViewController" customModule="Hale_Meditates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JournalViewController" id="C2d-NY-x2y" customClass="JournalViewController" customModule="Hale_Meditates" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZQd-7e-EGO"/>
                         <viewControllerLayoutGuide type="bottom" id="3Bg-ay-nOO"/>
@@ -1215,8 +1215,8 @@ Preperation</string>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add Journal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk6-8e-Z1O">
-                                        <rect key="frame" x="240" y="87.5" width="121" height="30.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Journal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk6-8e-Z1O">
+                                        <rect key="frame" x="240" y="96" width="121" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1239,12 +1239,15 @@ Preperation</string>
                                 <state key="normal" title="Save Journal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="exitView" destination="C2d-NY-x2y" eventType="touchUpInside" id="xbb-zu-4cD"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Emh-rv-SlB">
                                 <rect key="frame" x="0.0" y="296" width="600" height="201"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bog-oJ-oXk">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys1-BN-Jse">
                                                 <rect key="frame" x="16" y="8" width="30.5" height="19.5"/>
@@ -1253,7 +1256,7 @@ Preperation</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday, February 16, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abi-ed-1M5">
-                                                <rect key="frame" x="16" y="27.5" width="195.5" height="22"/>
+                                                <rect key="frame" x="16" y="27" width="195.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1268,7 +1271,7 @@ Preperation</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUp-h8-RgZ">
-                                        <rect key="frame" x="0.0" y="67" width="600" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="66" width="600" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-XD-UUu">
                                                 <rect key="frame" x="16" y="8" width="31.5" height="19.5"/>
@@ -1277,7 +1280,7 @@ Preperation</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 AM - 9:45 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1El-hj-72V">
-                                                <rect key="frame" x="16" y="27.5" width="136" height="22"/>
+                                                <rect key="frame" x="16" y="27" width="136" height="22"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1292,7 +1295,7 @@ Preperation</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EzJ-Jc-JHl">
-                                        <rect key="frame" x="0.0" y="135" width="600" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="133" width="600" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length of Meditation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5e-5K-q6v">
                                                 <rect key="frame" x="16" y="8" width="132" height="19.5"/>
@@ -1301,7 +1304,7 @@ Preperation</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6U-eM-ivo">
-                                                <rect key="frame" x="16" y="27.5" width="79" height="22"/>
+                                                <rect key="frame" x="16" y="27" width="79" height="22"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1626,7 +1629,7 @@ Preperation</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sessionTableViewCell" rowHeight="93" id="LhB-al-4xw">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sessionTableViewCell" rowHeight="93" id="LhB-al-4xw" customClass="SessionTableViewCell" customModule="Hale_Meditates" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LhB-al-4xw" id="qTH-fQ-RRa">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1703,6 +1706,12 @@ Preperation</string>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="20" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="durationLabel" destination="MnN-9w-NdO" id="2Mx-bq-BEd"/>
+                                    <outlet property="instructorImage" destination="q8W-RN-o33" id="dCH-N8-9AU"/>
+                                    <outlet property="instructorNameLabel" destination="TmD-RN-stg" id="l0n-E0-Irs"/>
+                                    <outlet property="titlelabel" destination="6go-ux-2a2" id="xnU-hX-V9d"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1714,7 +1723,7 @@ Preperation</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79v-a6-E4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2725" y="3390"/>
+            <point key="canvasLocation" x="3533" y="3546"/>
         </scene>
     </scenes>
     <resources>
@@ -1731,6 +1740,5 @@ Preperation</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hbc-qO-rvZ"/>
-        <segue reference="V8h-lS-N1M"/>
     </inferredMetricsTieBreakers>
 </document>

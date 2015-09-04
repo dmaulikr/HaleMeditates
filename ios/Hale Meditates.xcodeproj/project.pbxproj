@@ -18,6 +18,12 @@
 		1137F0871B3FBA840068DE5C /* CallToActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */; };
 		1137F0891B408FA30068DE5C /* TimedMeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */; };
 		1137F08C1B4092A10068DE5C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F08B1B4092A10068DE5C /* TimerView.swift */; };
+		1174C7EA1B9A0DB70070DE0C /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7E91B9A0DB70070DE0C /* SessionTableViewCell.swift */; };
+		1174C7EC1B9A0E2C0070DE0C /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7EB1B9A0E2C0070DE0C /* AudioSession.swift */; };
+		1174C7F01B9A10E50070DE0C /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7EF1B9A10E50070DE0C /* HttpUtil.swift */; };
+		1174C7F21B9A11190070DE0C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F11B9A11190070DE0C /* Util.swift */; };
+		1174C7F41B9A18F50070DE0C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F31B9A18F50070DE0C /* API.swift */; };
+		1174C7F61B9A287F0070DE0C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F51B9A287F0070DE0C /* Globals.swift */; };
 		119818441B2957650008FF75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119818431B2957650008FF75 /* SignUpViewController.swift */; };
 		11A984821B50FCEB005DF3D4 /* PreSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */; };
 		11A984841B50FCFE005DF3D4 /* MeditationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */; };
@@ -58,6 +64,12 @@
 		1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallToActionViewController.swift; sourceTree = "<group>"; };
 		1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedMeditationViewController.swift; sourceTree = "<group>"; };
 		1137F08B1B4092A10068DE5C /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		1174C7E91B9A0DB70070DE0C /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
+		1174C7EB1B9A0E2C0070DE0C /* AudioSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
+		1174C7EF1B9A10E50070DE0C /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
+		1174C7F11B9A11190070DE0C /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		1174C7F31B9A18F50070DE0C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1174C7F51B9A287F0070DE0C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		119818431B2957650008FF75 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreSessionViewController.swift; sourceTree = "<group>"; };
 		11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +183,7 @@
 			children = (
 				1137F08B1B4092A10068DE5C /* TimerView.swift */,
 				11A9848C1B51FEA4005DF3D4 /* JournalsTableViewCell.swift */,
+				1174C7E91B9A0DB70070DE0C /* SessionTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -180,6 +193,7 @@
 			children = (
 				11A984851B50FEDC005DF3D4 /* MeditationSettings.swift */,
 				11A984911B520901005DF3D4 /* JournalEntry.swift */,
+				1174C7EB1B9A0E2C0070DE0C /* AudioSession.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -191,6 +205,10 @@
 				11BD2B2B1B33F6E100F2564B /* UIUtil.swift */,
 				11A984931B52100C005DF3D4 /* DateUtil.swift */,
 				11A984951B5225BE005DF3D4 /* DataContext.swift */,
+				1174C7EF1B9A10E50070DE0C /* HttpUtil.swift */,
+				1174C7F11B9A11190070DE0C /* Util.swift */,
+				1174C7F31B9A18F50070DE0C /* API.swift */,
+				1174C7F51B9A287F0070DE0C /* Globals.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -308,13 +326,19 @@
 				11A9848D1B51FEA4005DF3D4 /* JournalsTableViewCell.swift in Sources */,
 				11A9848B1B51FE49005DF3D4 /* JournalsTableViewController.swift in Sources */,
 				110D756E1B26CB620079273E /* AppDelegate.swift in Sources */,
+				1174C7EA1B9A0DB70070DE0C /* SessionTableViewCell.swift in Sources */,
+				1174C7F61B9A287F0070DE0C /* Globals.swift in Sources */,
 				1137F0831B3F9A2A0068DE5C /* JoyrideViewController.swift in Sources */,
+				1174C7F21B9A11190070DE0C /* Util.swift in Sources */,
 				11A984961B5225BE005DF3D4 /* DataContext.swift in Sources */,
+				1174C7F01B9A10E50070DE0C /* HttpUtil.swift in Sources */,
 				1137F0891B408FA30068DE5C /* TimedMeditationViewController.swift in Sources */,
 				11A984861B50FEDC005DF3D4 /* MeditationSettings.swift in Sources */,
 				11A984941B52100C005DF3D4 /* DateUtil.swift in Sources */,
 				11A984891B51E738005DF3D4 /* JournalViewController.swift in Sources */,
 				11BD2B2C1B33F6E100F2564B /* UIUtil.swift in Sources */,
+				1174C7F41B9A18F50070DE0C /* API.swift in Sources */,
+				1174C7EC1B9A0E2C0070DE0C /* AudioSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

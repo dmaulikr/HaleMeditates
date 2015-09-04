@@ -51,6 +51,8 @@ class MeditationSettingsViewController: UIViewController {
         self.model?.meditation = self.cloneModel!.meditation;
         self.model?.prep = self.cloneModel!.prep;
         self.model?.relax = self.cloneModel!.relax;
+        
+        MeditationSettings.saveUsersMeditationSettings(self.model!);
 
         var presenter = self.presentingViewController;
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: ({

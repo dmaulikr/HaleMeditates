@@ -12,11 +12,21 @@ class JournalsContainerViewController: UIViewController {
 
     @IBOutlet weak var journalsTableViewContainer: UIView!
     var journalsTableViewController: JournalsTableViewController?
-    var model = DataContext.getJournalEntries();
+    var model: Array<JournalEntry>?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addJournalsTableViewController();
+        if (DataContext.journalEntries != nil) {
+            self.model = DataContext.journalEntries;
+            addJournalsTableViewController();
+        } else {
+            DataContext.getJournalEntries(({ (journalEntries: Array<JournalEntry>) in
+                self.model = journalEntries;
+                dispatch_async(dispatch_get_main_queue(), ({
+                    self.addJournalsTableViewController();
+                }));
+            }));
+        }
 
         // Do any additional setup after loading the view.
     }

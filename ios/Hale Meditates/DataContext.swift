@@ -9,7 +9,12 @@
 import Foundation
 
 class DataContext {
-    class func getJournalEntries() -> Array<JournalEntry> {
+    
+    static var journalEntries: Array<JournalEntry>?
+    static var audioSessions: Array<AudioSession>?
+    
+    class func getJournalEntries(callback: ((Array<JournalEntry>) -> Void))  {
+        
         var e0 = JournalEntry();
         var e1 = JournalEntry();
         var e2 = JournalEntry();
@@ -30,6 +35,16 @@ class DataContext {
         e1.entry = "This is a bullshit entry. I loathe meditation";
         e2.entry = "This is a bullshit entry. I hate meditation";
         e3.entry = "This is a bullshit entry. I fuck meditation";
-        return [e0, e1, e2, e3];
+        
+        DataContext.journalEntries = [e0, e1, e2, e3];
+        
+        Util.enqueue(({callback(DataContext.journalEntries!);}), priority: Util.PRIORITY.SUPER_HIGH);
+    }
+    
+    class func getAudioSessions(callback: (Array<AudioSession>?) -> Void) {
+        API.getAudioSessions({ (audioSessions: Array<AudioSession>?) in
+            self.audioSessions = audioSessions;
+            callback(self.audioSessions);
+        })
     }
 }

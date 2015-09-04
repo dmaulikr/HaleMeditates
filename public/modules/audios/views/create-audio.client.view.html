@@ -48,7 +48,7 @@
                             <button class="btn btn-default" ng-show="imageFile" ng-click="uploadFile(imageFile, 'instructorImage'); $event.preventDefault(); $event.stopPropagation();" style="margin: 10px 0;">Upload Instructor Image to server</button>
                         </div>
                     </div>
-                    <div ng-show="$scope.instructors.length">
+                    <div ng-show="instructors.length">
                         <a href="newInstructor" ng-click="$event.preventDefault(); createNewInstructor = !createNewInstructor; instructorName = null; instructorImage = null; instructorId = null;">
                         {{ (createNewInstructor) ? "Pick an existing instructor" : "Create New Instructor" }}
                         </a>

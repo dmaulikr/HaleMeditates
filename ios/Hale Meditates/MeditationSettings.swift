@@ -10,8 +10,8 @@ import Foundation
 
 class MeditationSettings {
     var prep: Int = 10
-    var meditation: Int = 600
-    var relax: Int = 150
+    var meditation: Int = 300
+    var relax: Int = 60
     
     static let MAX_PREP: Int = 300;
     static let MAX_MEDITATION: Int = 7200;
@@ -28,4 +28,27 @@ class MeditationSettings {
         tmp.relax = model.relax;
         return tmp;
     }
+    
+    class func getUsersMeditationSettings() -> MeditationSettings {
+        var settings = MeditationSettings();
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        var prep: AnyObject? = userDefaults.objectForKey("prep");
+        var meditation: AnyObject? = userDefaults.objectForKey("meditation");
+        var relax: AnyObject? = userDefaults.objectForKey("relax");
+        
+        settings.prep = (prep != nil) ? prep as! Int : settings.prep;
+        settings.meditation = (meditation != nil) ? meditation as! Int : settings.meditation;
+        settings.relax = (relax != nil) ? relax as! Int : settings.relax;
+        return settings;
+    }
+    
+    class func saveUsersMeditationSettings(settings: MeditationSettings) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(settings.prep, forKey: "prep")
+        userDefaults.setObject(settings.meditation, forKey: "meditation")
+        userDefaults.setObject(settings.relax, forKey: "relax")
+        userDefaults.synchronize()
+    }
+
 }

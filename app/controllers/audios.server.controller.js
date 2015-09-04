@@ -39,6 +39,7 @@ exports.create = function(req, res) {
 
 function saveNewAudio(instructor, req, res) {
 	var audio = new Audio({
+		duration: req.body.duration,
 		name: req.body.name,
 		file: req.body.file,
 		instructor: instructor,

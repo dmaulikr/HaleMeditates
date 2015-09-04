@@ -11,16 +11,23 @@ import UIKit
 class SessionsTableViewController: UITableViewController {
     
     let reuseId = "sessionTableViewCell";
+    var model: Array<AudioSession> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Guided Sessions";
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if (DataContext.audioSessions != nil) {
+            self.model = DataContext.audioSessions!;
+        } else {
+            DataContext.getAudioSessions(({ (audioSessions: Array<AudioSession>?) in
+                if audioSessions != nil {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.model = audioSessions!;
+                        self.tableView.reloadData();
+                    });
+                }
+            }))
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +62,7 @@ class SessionsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 10
+        return self.model.count;
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -63,7 +70,8 @@ class SessionsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! SessionTableViewCell
+        cell.model = self.model[indexPath.row];
         return cell
     }
 

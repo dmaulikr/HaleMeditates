@@ -77,12 +77,29 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
         var alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: {
             (action: UIAlertAction!) in
-            self.performSegueWithIdentifier("ShowJournalViewController", sender: nil);
+            var journalViewController = UIUtil.getViewControllerFromStoryboard("JournalViewController") as? JournalViewController;
+            journalViewController?.model = self.journalEntry;
+        self.navigationController?.setViewControllers([self.navigationController!.viewControllers.first!, journalViewController!], animated: true);
         }));
-        alert.addAction(UIAlertAction(title: "No, maybe later", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in print(action) }));
+        alert.addAction(UIAlertAction(title: "No, maybe later", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in self.popToHomeViewController()}));
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    func popToHomeViewController() {
+        if let topViewController = self.navigationController?.viewControllers.first as? UIViewController {
+            self.navigationController?.popToViewController(topViewController, animated: true);
+        }
+    }
+    
+    @IBAction func finishMeditation() {
+        timer?.invalidate();
+        if initialMeditationTime == meditationTimeRemaining { // they never started
+            popToHomeViewController();
+            return;
+        }
+        self.endMeditation();
+        
+    }
     
     func startRelaxationPeriod() {
         timer?.invalidate();
@@ -169,14 +186,6 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.destinationViewController is JournalViewController) {
-            self.endMeditation();
-            (segue.destinationViewController as! JournalViewController).model = self.journalEntry;
-        }
     }
 
 }

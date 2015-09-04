@@ -18,10 +18,7 @@ class PreSessionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.model = MeditationSettings();
-        model?.meditation = 60 * 5;
-        model?.prep = 20;
-        model?.relax = 30;
+        self.model = MeditationSettings.getUsersMeditationSettings();
         // Do any additional setup after loading the view.
         setUI();
     }

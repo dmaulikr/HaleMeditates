@@ -22,6 +22,9 @@ var fs = require('fs'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
 	busboy = require('connect-busboy'),
+	s3 = require('../s3'),
+	mime = require('mime'),
+	uuid = require('uuid'),
 	path = require('path');
 
 module.exports = function(db) {
@@ -87,12 +90,21 @@ module.exports = function(db) {
 		var fstream;
 		req.pipe(req.busboy);
 		req.busboy.on('file', function (fieldname, file, filename) {
-			console.log("Uploading: " + filename);
-			fstream = fs.createWriteStream(path.resolve('./public/static', filename));
-			file.pipe(fstream);
-			fstream.on('close', function () {
-				res.status(200).send({
-					url: req.protocol + '://' + req.headers.host + "/static/" + filename
+			var bufs = [];
+			file.on('data', function (d) {bufs.push(d)});
+			file.on('end', function () {
+				var buf = Buffer.concat(bufs);
+				var ext = path.extname(filename)
+				var canonical = filename.substr(0, ext.length + 1) + "_" + uuid.v4() + ext;
+				s3.uploadFile(canonical, buf, mime.lookup(filename), function (err, data) {
+					if (err) {
+						res.status(500).send({
+							message: "There was an error uploading the file to the server"
+						});
+					}
+					res.status(200).send({
+						url: data.Location
+					});
 				});
 			});
 		});

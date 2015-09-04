@@ -75,4 +75,5 @@ class UIUtil {
             return "\(seconds) \(s)";
         }
     }
+
 }
