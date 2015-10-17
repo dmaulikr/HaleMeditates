@@ -2,13 +2,15 @@
 /**
  * Module dependencies.
  */
-var AWS = require('aws-sdk');
-var fs = require('fs');
+var AWS = require('aws-sdk'),
+    fs = require('fs'),
+    awsConf = {
+      accessKeyId: process.env["ACCESS_KEY_ID"],
+      secretAccessKey: process.env["SECRET_ACCESS_KEY"]
+    };
 
-AWS.config.update({
-	accessKeyId: 'AKIAJAGJHK26CDOHPP7Q',
-	secretAccessKey: '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'
-});
+console.log("awsConf", awsConf);
+AWS.config.update(awsConf);
 
 var s3 = new AWS.S3();
 

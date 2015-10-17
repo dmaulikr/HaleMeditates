@@ -24,6 +24,8 @@
 		1174C7F21B9A11190070DE0C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F11B9A11190070DE0C /* Util.swift */; };
 		1174C7F41B9A18F50070DE0C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F31B9A18F50070DE0C /* API.swift */; };
 		1174C7F61B9A287F0070DE0C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F51B9A287F0070DE0C /* Globals.swift */; };
+		1179A1221BD2BA46005CCE52 /* AudioPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179A1211BD2BA46005CCE52 /* AudioPlaybackViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1179A1241BD2BBA6005CCE52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */; };
 		119818441B2957650008FF75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119818431B2957650008FF75 /* SignUpViewController.swift */; };
 		11A984821B50FCEB005DF3D4 /* PreSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */; };
 		11A984841B50FCFE005DF3D4 /* MeditationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */; };
@@ -60,6 +62,8 @@
 		1174C7F11B9A11190070DE0C /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		1174C7F31B9A18F50070DE0C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1174C7F51B9A287F0070DE0C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		1179A1211BD2BA46005CCE52 /* AudioPlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlaybackViewController.swift; sourceTree = "<group>"; };
+		1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		119818431B2957650008FF75 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreSessionViewController.swift; sourceTree = "<group>"; };
 		11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1179A1241BD2BBA6005CCE52 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,7 @@
 		110D755F1B26CB620079273E = {
 			isa = PBXGroup;
 			children = (
+				1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */,
 				110D756A1B26CB620079273E /* Hale Meditates */,
 				110D75801B26CB620079273E /* Hale MeditatesTests */,
 				110D75691B26CB620079273E /* Products */,
@@ -157,6 +163,7 @@
 				11A984881B51E738005DF3D4 /* JournalViewController.swift */,
 				11A9848A1B51FE49005DF3D4 /* JournalsTableViewController.swift */,
 				11A9848E1B520591005DF3D4 /* JournalsContainerViewController.swift */,
+				1179A1211BD2BA46005CCE52 /* AudioPlaybackViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +297,7 @@
 				1174C7F01B9A10E50070DE0C /* HttpUtil.swift in Sources */,
 				1137F0891B408FA30068DE5C /* TimedMeditationViewController.swift in Sources */,
 				11A984861B50FEDC005DF3D4 /* MeditationSettings.swift in Sources */,
+				1179A1221BD2BA46005CCE52 /* AudioPlaybackViewController.swift in Sources */,
 				11A984941B52100C005DF3D4 /* DateUtil.swift in Sources */,
 				11A984891B51E738005DF3D4 /* JournalViewController.swift in Sources */,
 				11BD2B2C1B33F6E100F2564B /* UIUtil.swift in Sources */,
