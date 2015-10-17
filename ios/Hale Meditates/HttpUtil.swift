@@ -46,9 +46,9 @@ class HttpUtil {
     }
     
     static func requestAsync(method: Method, urlString: String, body: String? = nil, headers: Dictionary<String, String>?, callback: ((data: NSData?) -> Void)?) {
-        let qos = Int(QOS_CLASS_USER_INITIATED.value);
+        let qos = Int(QOS_CLASS_USER_INITIATED.rawValue);
         dispatch_async(dispatch_get_global_queue(qos, 0)) {
-            var data = HttpUtil.requestSync(method, urlString: urlString, body: body, headers: headers);
+            let data = HttpUtil.requestSync(method, urlString: urlString, body: body, headers: headers);
             if callback != nil {
                 callback!(data: data);
             }
@@ -67,9 +67,12 @@ class HttpUtil {
             }
         }
         
-        var response = AutoreleasingUnsafeMutablePointer<NSURLResponse?>()
-        var error = NSErrorPointer()
-        return NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: error);
+        let response = AutoreleasingUnsafeMutablePointer<NSURLResponse?>()
+        do {
+            return try NSURLConnection.sendSynchronousRequest(request, returningResponse: response)
+        } catch _ {
+            return nil
+        };
     }
     
     class Request {

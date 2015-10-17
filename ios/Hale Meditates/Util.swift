@@ -14,22 +14,20 @@ class Util {
     
     static func getQualityOfServiceByPriority(p: PRIORITY?) -> Int {
         if (p == nil) {
-            return Int(QOS_CLASS_DEFAULT.value);
+            return Int(QOS_CLASS_DEFAULT.rawValue);
         }
         
         switch (p!) {
         case .SUPER_LOW:
-            return Int(QOS_CLASS_BACKGROUND.value);
+            return Int(QOS_CLASS_BACKGROUND.rawValue);
         case .LOW:
-            return Int(QOS_CLASS_UTILITY.value);
+            return Int(QOS_CLASS_UTILITY.rawValue);
         case .MEDIUM:
-            return Int(QOS_CLASS_DEFAULT.value);
+            return Int(QOS_CLASS_DEFAULT.rawValue);
         case .HIGH:
-            return Int(QOS_CLASS_USER_INITIATED.value);
+            return Int(QOS_CLASS_USER_INITIATED.rawValue);
         case .SUPER_HIGH:
-            return Int(QOS_CLASS_USER_INTERACTIVE.value);
-        default:
-            return Int(QOS_CLASS_DEFAULT.value);
+            return Int(QOS_CLASS_USER_INTERACTIVE.rawValue);
         }
     }
     
@@ -41,8 +39,20 @@ class Util {
     }
     
     static func buildUserSavedPath(fileName: String) -> String {
-        var documentsDirectory: String = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as! String;
-        var path = documentsDirectory.stringByAppendingPathComponent(fileName);
-        return path;
+        let documentsDirectory: String = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!
+        let documentsURL = NSURL(string: documentsDirectory);
+        return documentsURL?.URLByAppendingPathComponent(fileName).absoluteString ?? "";
+    }
+    
+    static func openResourceFile(name: String, ext: String) -> String? {
+        if let path = NSBundle.mainBundle().pathForResource(name, ofType: ext) {
+            do {
+                return try String(contentsOfFile: path);
+            } catch _ {
+                return nil
+            };
+        } else {
+            return nil;
+        }
     }
 }

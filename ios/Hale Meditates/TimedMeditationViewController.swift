@@ -54,8 +54,8 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
     
     func formatText(time: Int, label: String) -> String {
         if (time > 60) {
-            var minutes = time / 60;
-            var seconds = time % 60;
+            let minutes = time / 60;
+            let seconds = time % 60;
             return "\(minutes)m\(seconds)s\n\(label)"
             
         } else {
@@ -74,19 +74,19 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
         timer?.invalidate();
         self.meditationLabel.text = "Finished";
         let message: String? = "You've finished your meditation. Would you like to add a journal entry?"
-        var alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: {
-            (action: UIAlertAction!) in
-            var journalViewController = UIUtil.getViewControllerFromStoryboard("JournalViewController") as? JournalViewController;
+            (action: UIAlertAction) in
+            let journalViewController = UIUtil.getViewControllerFromStoryboard("JournalViewController") as? JournalViewController;
             journalViewController?.model = self.journalEntry;
         self.navigationController?.setViewControllers([self.navigationController!.viewControllers.first!, journalViewController!], animated: true);
         }));
-        alert.addAction(UIAlertAction(title: "No, maybe later", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in self.popToHomeViewController()}));
+        alert.addAction(UIAlertAction(title: "No, maybe later", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) in self.popToHomeViewController()}));
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func popToHomeViewController() {
-        if let topViewController = self.navigationController?.viewControllers.first as? UIViewController {
+        if let topViewController = self.navigationController?.viewControllers.first {
             self.navigationController?.popToViewController(topViewController, animated: true);
         }
     }

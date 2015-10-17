@@ -35,7 +35,7 @@ class JournalViewController: UIViewController, UITextViewDelegate {
             meditationDurationTimesLabel.text = "\(model!.getStartTime) - \(model!.getEndTime)"
             meditationDurationLabel.text = model!.totalTime;
             textView.text = model?.entry
-            if (model!.entry != nil && count(model!.entry!) > 0) {
+            if (model!.entry != nil && (model!.entry!).characters.count > 0) {
                 self.addJournalLabel.text = "Tap to Edit Entry";
             } else {
                 self.addJournalLabel.hidden = true;
@@ -48,7 +48,7 @@ class JournalViewController: UIViewController, UITextViewDelegate {
     var firstShow = true;
     override func viewWillAppear(animated: Bool) {
         if (firstShow && self.addJournalLabel.text == "Tap to Edit Entry") {
-            UIView.animateWithDuration(1.5, delay: 1.0, options: nil, animations: ({
+            UIView.animateWithDuration(1.5, delay: 1.0, options: [], animations: ({
                 self.addJournalLabel.alpha = 0.0;
             }), completion: nil);
         } else if (firstShow && self.addJournalLabel.text == "Add Journal") {

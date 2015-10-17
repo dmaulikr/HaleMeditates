@@ -11,7 +11,9 @@ import UIKit
 class PreSessionViewController: UIViewController {
     
     var model: MeditationSettings?
+    var audioSession: AudioSession?
     
+    @IBOutlet weak var audioSessionName: UILabel!
     @IBOutlet weak var meditationLabel: UILabel!
     @IBOutlet weak var prepLabel: UILabel!
     @IBOutlet weak var relaxationLabel: UILabel!
@@ -19,11 +21,31 @@ class PreSessionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.model = MeditationSettings.getUsersMeditationSettings();
+        self.model?.meditation = self.audioSession?.duration ?? (self.model?.meditation)!;
+        
+        if self.audioSession == nil {
+            self.audioSessionName.removeFromSuperview();
+        }
+        self.navigationItem.title = "Session Setup";
         // Do any additional setup after loading the view.
         setUI();
     }
     
+
+    @IBAction func handleBackButtonPressed() {
+        self.navigationController?.popViewControllerAnimated(true);
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true);
+        super.viewWillAppear(animated);
+    }
+    
+    
     func setUI() {
+        if self.audioSession != nil {
+            self.audioSessionName.text = self.audioSession?.title
+        }
         self.prepLabel.text = UIUtil.formatTimeString(self.model!.prep);
         self.meditationLabel.text = UIUtil.formatTimeString(self.model!.meditation);
         self.relaxationLabel.text = UIUtil.formatTimeString(self.model!.relax);
@@ -36,7 +58,10 @@ class PreSessionViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.destinationViewController is MeditationSettingsViewController) {
-            (segue.destinationViewController as! MeditationSettingsViewController).model = self.model;
+            
+            let meditationsSettingsVc = segue.destinationViewController as! MeditationSettingsViewController;
+            meditationsSettingsVc.model = self.model;
+            meditationsSettingsVc.disableEditingForMeditationTime = audioSession != nil
         }
         
         if (segue.destinationViewController is TimedMeditationViewController) {

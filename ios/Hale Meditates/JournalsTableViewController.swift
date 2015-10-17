@@ -15,6 +15,7 @@ class JournalsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor(red: 245.0 / 255.0, green: 245.0 / 256.0, blue: 245.0 / 255.0, alpha: 1.0);
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,7 +51,7 @@ class JournalsTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.destinationViewController is JournalViewController) {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 (segue.destinationViewController as! JournalViewController).model = self.model![indexPath.row];
             }
         }

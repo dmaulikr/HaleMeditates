@@ -22,7 +22,7 @@ class MeditationSettings {
     static let MIN_RELAX: Int = 0;
     
     class func clone(model: MeditationSettings) -> MeditationSettings {
-        var tmp = MeditationSettings();
+        let tmp = MeditationSettings();
         tmp.prep = model.prep;
         tmp.meditation = model.meditation;
         tmp.relax = model.relax;
@@ -30,12 +30,12 @@ class MeditationSettings {
     }
     
     class func getUsersMeditationSettings() -> MeditationSettings {
-        var settings = MeditationSettings();
+        let settings = MeditationSettings();
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        var prep: AnyObject? = userDefaults.objectForKey("prep");
-        var meditation: AnyObject? = userDefaults.objectForKey("meditation");
-        var relax: AnyObject? = userDefaults.objectForKey("relax");
+        let prep: AnyObject? = userDefaults.objectForKey("prep");
+        let meditation: AnyObject? = userDefaults.objectForKey("meditation");
+        let relax: AnyObject? = userDefaults.objectForKey("relax");
         
         settings.prep = (prep != nil) ? prep as! Int : settings.prep;
         settings.meditation = (meditation != nil) ? meditation as! Int : settings.meditation;

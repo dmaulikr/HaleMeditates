@@ -12,13 +12,12 @@ class DateUtil {
     
     class func getTimeString(date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let components = calendar.components([.Hour, .Minute], fromDate: date)
         let hour = components.hour
         let minutes = components.minute
-        var str = String(format: "%2d:%02d", hour % 12, minutes)
-        var x = (hour < 12) ? str + " PM" : str + " PM";
-        x.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        return x;
+        let str = String(format: "%2d:%02d", hour % 12, minutes)
+        let x = (hour < 12) ? str + " PM" : str + " PM";
+        return x.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
     class func getMonthString(date: NSDate) -> String {

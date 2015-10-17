@@ -12,12 +12,12 @@
 		110D75731B26CB620079273E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110D75711B26CB620079273E /* Main.storyboard */; };
 		110D75751B26CB620079273E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110D75741B26CB620079273E /* Images.xcassets */; };
 		110D75781B26CB620079273E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110D75761B26CB620079273E /* LaunchScreen.xib */; };
-		110D75841B26CB620079273E /* Hale_MeditatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D75831B26CB620079273E /* Hale_MeditatesTests.swift */; };
 		1137F0831B3F9A2A0068DE5C /* JoyrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */; };
 		1137F0851B3FB6FE0068DE5C /* SessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0841B3FB6FE0068DE5C /* SessionsTableViewController.swift */; };
 		1137F0871B3FBA840068DE5C /* CallToActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */; };
 		1137F0891B408FA30068DE5C /* TimedMeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */; };
 		1137F08C1B4092A10068DE5C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F08B1B4092A10068DE5C /* TimerView.swift */; };
+		113D99F01BC5A9C900DA11BF /* payload.json in Resources */ = {isa = PBXBuildFile; fileRef = 113D99EF1BC5A9C900DA11BF /* payload.json */; settings = {ASSET_TAGS = (); }; };
 		1174C7EA1B9A0DB70070DE0C /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7E91B9A0DB70070DE0C /* SessionTableViewCell.swift */; };
 		1174C7EC1B9A0E2C0070DE0C /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7EB1B9A0E2C0070DE0C /* AudioSession.swift */; };
 		1174C7F01B9A10E50070DE0C /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7EF1B9A10E50070DE0C /* HttpUtil.swift */; };
@@ -38,16 +38,6 @@
 		11BD2B2C1B33F6E100F2564B /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD2B2B1B33F6E100F2564B /* UIUtil.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		110D757E1B26CB620079273E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 110D75601B26CB620079273E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 110D75671B26CB620079273E;
-			remoteInfo = "Hale Meditates";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		110D75681B26CB620079273E /* Hale Meditates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hale Meditates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		110D756C1B26CB620079273E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +46,6 @@
 		110D75721B26CB620079273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		110D75741B26CB620079273E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		110D75771B26CB620079273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		110D757D1B26CB620079273E /* Hale MeditatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hale MeditatesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		110D75821B26CB620079273E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		110D75831B26CB620079273E /* Hale_MeditatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hale_MeditatesTests.swift; sourceTree = "<group>"; };
 		1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoyrideViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +53,7 @@
 		1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallToActionViewController.swift; sourceTree = "<group>"; };
 		1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedMeditationViewController.swift; sourceTree = "<group>"; };
 		1137F08B1B4092A10068DE5C /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		113D99EF1BC5A9C900DA11BF /* payload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payload.json; sourceTree = "<group>"; };
 		1174C7E91B9A0DB70070DE0C /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		1174C7EB1B9A0E2C0070DE0C /* AudioSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
 		1174C7EF1B9A10E50070DE0C /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
@@ -92,13 +82,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		110D757A1B26CB620079273E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				110D75681B26CB620079273E /* Hale Meditates.app */,
-				110D757D1B26CB620079273E /* Hale MeditatesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				110D756C1B26CB620079273E /* Info.plist */,
+				113D99EF1BC5A9C900DA11BF /* payload.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,40 +216,20 @@
 			productReference = 110D75681B26CB620079273E /* Hale Meditates.app */;
 			productType = "com.apple.product-type.application";
 		};
-		110D757C1B26CB620079273E /* Hale MeditatesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 110D758A1B26CB620079273E /* Build configuration list for PBXNativeTarget "Hale MeditatesTests" */;
-			buildPhases = (
-				110D75791B26CB620079273E /* Sources */,
-				110D757A1B26CB620079273E /* Frameworks */,
-				110D757B1B26CB620079273E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				110D757F1B26CB620079273E /* PBXTargetDependency */,
-			);
-			name = "Hale MeditatesTests";
-			productName = "Hale MeditatesTests";
-			productReference = 110D757D1B26CB620079273E /* Hale MeditatesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		110D75601B26CB620079273E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = koait;
 				TargetAttributes = {
 					110D75671B26CB620079273E = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = BM7DCU5YJ8;
-					};
-					110D757C1B26CB620079273E = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 110D75671B26CB620079273E;
 					};
 				};
 			};
@@ -284,7 +247,6 @@
 			projectRoot = "";
 			targets = (
 				110D75671B26CB620079273E /* Hale Meditates */,
-				110D757C1B26CB620079273E /* Hale MeditatesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -296,14 +258,8 @@
 			files = (
 				110D75731B26CB620079273E /* Main.storyboard in Resources */,
 				110D75781B26CB620079273E /* LaunchScreen.xib in Resources */,
+				113D99F01BC5A9C900DA11BF /* payload.json in Resources */,
 				110D75751B26CB620079273E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		110D757B1B26CB620079273E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,23 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		110D75791B26CB620079273E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				110D75841B26CB620079273E /* Hale_MeditatesTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		110D757F1B26CB620079273E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 110D75671B26CB620079273E /* Hale Meditates */;
-			targetProxy = 110D757E1B26CB620079273E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		110D75711B26CB620079273E /* Main.storyboard */ = {
@@ -401,6 +341,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -416,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -454,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -468,6 +409,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Hale Meditates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ".$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -479,41 +421,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Hale Meditates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ".$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		110D758B1B26CB620079273E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Hale MeditatesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hale Meditates.app/Hale Meditates";
-			};
-			name = Debug;
-		};
-		110D758C1B26CB620079273E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Hale MeditatesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hale Meditates.app/Hale Meditates";
 			};
 			name = Release;
 		};
@@ -534,15 +443,6 @@
 			buildConfigurations = (
 				110D75881B26CB620079273E /* Debug */,
 				110D75891B26CB620079273E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		110D758A1B26CB620079273E /* Build configuration list for PBXNativeTarget "Hale MeditatesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				110D758B1B26CB620079273E /* Debug */,
-				110D758C1B26CB620079273E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

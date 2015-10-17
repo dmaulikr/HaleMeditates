@@ -42,11 +42,11 @@ class SessionTableViewCell: UITableViewCell {
         if self.model?.instructorImage == nil {
             if (self.model?.instructorImageUrl != nil) {
                 Util.enqueue(({
-                    var url = self.model!.instructorImageUrl!;
+                    let url = self.model!.instructorImageUrl!;
                     if let data = HttpUtil.GET(url, body: nil, headers: nil, isAsync: false, callback: nil) {
                         dispatch_async(dispatch_get_main_queue(), ({
                             if (url == self.model?.instructorImageUrl) {
-                                var image = UIImage(data: data);
+                                let image = UIImage(data: data);
                                 self.model?.instructorImage = image;
                                 self.instructorImage.image = self.model?.instructorImage;
                             }

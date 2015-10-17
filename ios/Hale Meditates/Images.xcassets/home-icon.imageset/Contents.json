@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "avatar_placeholder.png"
+      "filename" : "home-icon.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

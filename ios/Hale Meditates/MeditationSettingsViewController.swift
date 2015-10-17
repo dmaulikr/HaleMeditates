@@ -10,6 +10,8 @@ import UIKit
 
 class MeditationSettingsViewController: UIViewController {
     
+    var disableEditingForMeditationTime: Bool = false;
+    
     var model: MeditationSettings? {
         didSet {
             cloneModel = MeditationSettings.clone(model!);
@@ -18,6 +20,7 @@ class MeditationSettingsViewController: UIViewController {
     
     var cloneModel: MeditationSettings?
 
+    @IBOutlet weak var relaxationContainer: UIView!
     @IBOutlet weak var prepTimeLabel: UILabel!
     @IBOutlet weak var meditationTimeLabel: UILabel!
     @IBOutlet weak var relaxTimeLabel: UILabel!
@@ -36,13 +39,16 @@ class MeditationSettingsViewController: UIViewController {
         prepSlider.maximumValue = Float(MeditationSettings.MAX_PREP);
         meditationSlider.maximumValue = Float(MeditationSettings.MAX_MEDITATION);
         relaxSlider.maximumValue = Float(MeditationSettings.MAX_RELAX);
+        if disableEditingForMeditationTime {
+            self.relaxationContainer.removeFromSuperview();
+        }
         setUI();
     }
     
     @IBOutlet weak var save: UIButton!
     
     @IBAction func close() {
-        var presenter = self.presentingViewController;
+        _ = self.presentingViewController;
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
     }
 
@@ -54,7 +60,7 @@ class MeditationSettingsViewController: UIViewController {
         
         MeditationSettings.saveUsersMeditationSettings(self.model!);
 
-        var presenter = self.presentingViewController;
+        let presenter = self.presentingViewController;
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: ({
             if (presenter is PreSessionViewController) {
                 (presenter as? PreSessionViewController)?.setUI();
@@ -64,12 +70,17 @@ class MeditationSettingsViewController: UIViewController {
     
     func setUI() {
         prepSlider.tag = 0;
-        meditationSlider.tag = 1;
         relaxSlider.tag = 2;
+        
+        if !disableEditingForMeditationTime {
+            meditationSlider.tag = 1;
+        }
         
         if (self.cloneModel != nil) {
             self.prepTimeLabel.text = UIUtil.formatTimeString(self.cloneModel!.prep);
-            self.meditationTimeLabel.text = UIUtil.formatTimeString(self.cloneModel!.meditation);
+            if !disableEditingForMeditationTime {
+                self.meditationTimeLabel.text = UIUtil.formatTimeString(self.cloneModel!.meditation);
+            }
             self.relaxTimeLabel.text = UIUtil.formatTimeString(self.cloneModel!.relax);
         }
     }

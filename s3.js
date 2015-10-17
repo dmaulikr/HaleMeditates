@@ -6,8 +6,8 @@ var AWS = require('aws-sdk');
 var fs = require('fs');
 
 AWS.config.update({
-	accessKeyId: 'AKIAI3D37MRQJM3GQ5AA',
-	secretAccessKey: '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'
+	accessKeyId: 'AKIAJAGJHK26CDOHPP7Q',
+	secretAccessKey: '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'
 });
 
 var s3 = new AWS.S3();
@@ -30,7 +30,7 @@ var s3 = new AWS.S3();
 //var fileKey = fileName;
 //var buffer = fs.readFileSync('./' + filePath);
 // S3 Upload options
-var bucket = 'Mindful-Labs/meditation-audio';
+var bucket = 'mindful-files/meditation-audio';
 
 
 module.exports = {

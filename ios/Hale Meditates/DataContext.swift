@@ -15,10 +15,10 @@ class DataContext {
     
     class func getJournalEntries(callback: ((Array<JournalEntry>) -> Void))  {
         
-        var e0 = JournalEntry();
-        var e1 = JournalEntry();
-        var e2 = JournalEntry();
-        var e3 = JournalEntry();
+        let e0 = JournalEntry();
+        let e1 = JournalEntry();
+        let e2 = JournalEntry();
+        let e3 = JournalEntry();
         
         
         e0.startDate = NSDate(timeIntervalSinceNow: 13000);

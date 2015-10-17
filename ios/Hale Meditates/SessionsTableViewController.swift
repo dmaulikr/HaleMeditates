@@ -38,7 +38,7 @@ class SessionsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         self.navigationController?.setNavigationBarHidden(false, animated: true);
-        var backButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton;
+        let backButton = UIButton(type: UIButtonType.Custom);
         //backButton.frame = CGRectMake(0, 0, 13, 13);
         backButton.sizeToFit();
         backButton.setImage(UIImage(named: "back"), forState: UIControlState.Normal);
@@ -73,6 +73,15 @@ class SessionsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! SessionTableViewCell
         cell.model = self.model[indexPath.row];
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let sessionModel = self.model[indexPath.row];
+        print(sessionModel.audioUrl!)
+        if let preSessionVC = UIUtil.getViewControllerFromStoryboard("PreSessionViewController") as? PreSessionViewController {
+            preSessionVC.audioSession = sessionModel;
+            self.navigationController?.pushViewController(preSessionVC, animated: true);
+        }
     }
 
     /*

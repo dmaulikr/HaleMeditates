@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hale Meditates/PreSessionViewController.swift"
-            timestampString = "463079357.397831"
+            timestampString = "465940488.501968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "setUI()"
             landmarkType = "5">
          </BreakpointContent>
@@ -294,7 +294,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hale Meditates/JournalsContainerViewController.swift"
@@ -305,6 +305,38 @@
             endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hale_Meditates.JournalsContainerViewController.(viewDidLoad (Hale_Meditates.JournalsContainerViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "Hale Meditates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Pillsbury/Desktop/Hale%20Meditates/ios/Hale%20Meditates/JournalsContainerViewController.swift"
+                  timestampString = "465924489.78611"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hale_Meditates.JournalsContainerViewController.(viewDidLoad (Hale_Meditates.JournalsContainerViewController) -&gt; () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Hale Meditates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Pillsbury/Desktop/Hale%20Meditates/ios/Hale%20Meditates/JournalsContainerViewController.swift"
+                  timestampString = "465924489.786257"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -361,12 +393,28 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hale Meditates/API.swift"
-            timestampString = "463088939.518102"
+            filePath = "Hale Meditates/SessionTableViewCell.swift"
+            timestampString = "463089638.948541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "setUI()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hale Meditates/API.swift"
+            timestampString = "465939678.89572"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "getAudioSessions(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -377,13 +425,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hale Meditates/SessionTableViewCell.swift"
-            timestampString = "463089638.948541"
+            filePath = "Hale Meditates/API.swift"
+            timestampString = "465939716.021291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "setUI()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getAudioSessions(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -58,7 +58,7 @@ class JournalEntry {
         get {
             if (startDate != nil && endDate != nil) {
                 let calendar = NSCalendar.currentCalendar()
-                let dateComponents = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: startDate!, toDate: endDate!, options: nil);
+                let dateComponents = calendar.components(NSCalendarUnit.Second, fromDate: startDate!, toDate: endDate!, options: []);
                 let seconds = dateComponents.second;
                 return UIUtil.formatTimeString(seconds, longDate: true);
             } else {

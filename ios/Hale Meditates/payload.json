@@ -1,0 +1,20 @@
+ [
+  {
+  "_id": "56154fe7774dcb67138291a5",
+  "instructor": {
+  "_id": "56154d74bc18b05a128879dc",
+  "__v": 0,
+  "image": "https://s3.amazonaws.com/mindful-files/meditation-audio%2FGOPR0_2a6dbe8c-7b1a-4664-9c60-b89a83c5eca0.JPG",
+  "name": "Ryan Pillsbury"
+  },
+  "user": {
+  "_id": "56154798e15d100612457481",
+  "displayName": "Ryan Pillsbury"
+  },
+  "__v": 0,
+  "created": "2015-10-07T17:01:27.680Z",
+  "duration": 9,
+  "file": "https://s3.amazonaws.com/mindful-files/meditation-audio%2Ftest-_79d88350-7e47-4f29-bbb9-503c9b7f9885.m4a",
+  "name": "Relax and Let free"
+  }
+  ]

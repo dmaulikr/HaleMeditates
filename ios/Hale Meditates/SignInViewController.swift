@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -16,6 +16,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailTextField.delegate = self;
+        self.passwordTextField.delegate = self;
         setUI()
     }
     
@@ -29,15 +31,19 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func transitionToSignUpViewController() {
-        var dest = UIUtil.getViewControllerFromStoryboard("SignUpVC") as!UIViewController;
+        let dest = UIUtil.getViewControllerFromStoryboard("SignUpVC") as!UIViewController;
         UIView.beginAnimations("RightFlip", context: nil);
         UIView.setAnimationDuration(0.5);
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut);
         UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromRight, forView: self.view.superview!, cache: true);
         UIView.commitAnimations();
-        
         self.view.window?.rootViewController = dest;
         
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event);
+        self.view.endEditing(true);
     }
 
 

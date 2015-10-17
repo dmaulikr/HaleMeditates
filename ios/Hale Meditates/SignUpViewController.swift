@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var picker =  UIDatePicker();
+        let picker =  UIDatePicker();
         picker.date = NSDate(timeIntervalSinceNow: NSTimeInterval(-13 * 365 * 24 * 60 * 60));
         picker.datePickerMode = UIDatePickerMode.Date;
         picker.addTarget(self, action: "dateTextField:", forControlEvents: UIControlEvents.ValueChanged)
@@ -41,17 +41,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func dateTextField(sender: AnyObject) {
-        var picker = birthdayTextField.inputView as! UIDatePicker
+        let picker = birthdayTextField.inputView as! UIDatePicker
         picker.maximumDate = NSDate();
-        var dateFormat = NSDateFormatter()
-        var eventDate = picker.date;
+        let dateFormat = NSDateFormatter()
+        let eventDate = picker.date;
         dateFormat.dateFormat = "MMMM dd, yyyy";
-        var dateString = dateFormat.stringFromDate(eventDate)
+        let dateString = dateFormat.stringFromDate(eventDate)
         birthdayTextField.text = dateString;
     }
     
     @IBAction func transitionToSignInViewController() {
-        var dest = UIUtil.getViewControllerFromStoryboard("SignInVC") as!UIViewController;
+        let dest = UIUtil.getViewControllerFromStoryboard("SignInVC") as!UIViewController;
         UIView.beginAnimations("LeftFlip", context: nil);
         UIView.setAnimationDuration(0.5);
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut);
@@ -62,7 +62,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event);
         self.view.endEditing(true);
     }

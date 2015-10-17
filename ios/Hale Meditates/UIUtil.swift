@@ -27,17 +27,17 @@ class UIUtil {
         }
         // long date not supported at the moment
         var minutes: Int = value / 60
-        var seconds: Int = value - (minutes * 60);
+        let seconds: Int = value - (minutes * 60);
         if ((minutes > 0 && seconds > 0) || minutes >= 60) {
             if (minutes < 10) {
-                return NSString(format: "%dm%02ds", minutes, seconds) as! String
+                return NSString(format: "%dm%02ds", minutes, seconds) as String
             } else if (minutes < 60) {
                 return "\(minutes)m";
             } else {
-                var hours: Int = minutes / 60
+                let hours: Int = minutes / 60
                 minutes = minutes - (hours * 60);
                 if (minutes > 0) {
-                    return NSString(format: "%dh%02dm", hours, minutes) as! String
+                    return NSString(format: "%dh%02dm", hours, minutes) as String
                 } else {
                     return "\(hours)h";
                 }
@@ -51,20 +51,20 @@ class UIUtil {
     
     static func formatTimeStringLong(value: Int) -> String {
         var minutes: Int = value / 60
-        var m = ((minutes % 60) == 1) ? "minute" : "minutes";
-        var seconds: Int = value - (minutes * 60);
-        var s = ((seconds % 60) == 1) ? "second" : "seconds";
+        let m = ((minutes % 60) == 1) ? "minute" : "minutes";
+        let seconds: Int = value - (minutes * 60);
+        let s = ((seconds % 60) == 1) ? "second" : "seconds";
         if ((minutes > 0 && seconds > 0) || minutes >= 60) {
             if (minutes < 10) {
-                return NSString(format: "%d \(m)%02d \(s)", minutes, seconds) as! String
+                return NSString(format: "%d \(m)%02d \(s)", minutes, seconds) as String
             } else if (minutes < 60) {
                 return "\(minutes) \(m)";
             } else {
-                var hours: Int = minutes / 60
-                var h = ((hours % 24) == 1) ? "hour" : "hours";
+                let hours: Int = minutes / 60
+                let h = ((hours % 24) == 1) ? "hour" : "hours";
                 minutes = minutes - (hours * 60);
                 if (minutes > 0) {
-                    return NSString(format: "%d \(h)%02d \(m)", hours, minutes) as! String
+                    return NSString(format: "%d \(h)%02d \(m)", hours, minutes) as String
                 } else {
                     return "\(hours) \(h)";
                 }
