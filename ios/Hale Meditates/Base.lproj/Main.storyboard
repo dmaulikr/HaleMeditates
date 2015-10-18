@@ -175,7 +175,7 @@
                                     <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.25" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7a8-bF-FVg" kind="show" id="Hbc-qO-rvZ"/>
+                                    <action selector="attemptToSignIn" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KpX-GW-IOO"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="me@example.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D46-S5-jUT">
@@ -1614,7 +1614,7 @@ Preperation</string>
         <!--Tab Bar Controller-->
         <scene sceneID="k1m-BB-XgD">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7a8-bF-FVg" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="7a8-bF-FVg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Tz7-Fx-eW9">
@@ -1924,7 +1924,4 @@ Preperation</string>
         <image name="technology_icon" width="96" height="164"/>
         <image name="time_icon" width="31" height="31"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Hbc-qO-rvZ"/>
-    </inferredMetricsTieBreakers>
 </document>
