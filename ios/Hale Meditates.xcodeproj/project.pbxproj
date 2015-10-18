@@ -64,6 +64,11 @@
 		1174C7F51B9A287F0070DE0C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		1179A1211BD2BA46005CCE52 /* AudioPlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlaybackViewController.swift; sourceTree = "<group>"; };
 		1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1179A1251BD2BE0C005CCE52 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1179A1261BD2BE0C005CCE52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1179A1291BD2BE4C005CCE52 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1179A12B1BD2BFE9005CCE52 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1179A12D1BD2C03E005CCE52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		119818431B2957650008FF75 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreSessionViewController.swift; sourceTree = "<group>"; };
 		11A984831B50FCFE005DF3D4 /* MeditationSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +98,11 @@
 		110D755F1B26CB620079273E = {
 			isa = PBXGroup;
 			children = (
+				1179A12D1BD2C03E005CCE52 /* MobileCoreServices.framework */,
+				1179A12B1BD2BFE9005CCE52 /* AssetsLibrary.framework */,
+				1179A1291BD2BE4C005CCE52 /* MediaPlayer.framework */,
+				1179A1251BD2BE0C005CCE52 /* CoreMedia.framework */,
+				1179A1261BD2BE0C005CCE52 /* Foundation.framework */,
 				1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */,
 				110D756A1B26CB620079273E /* Hale Meditates */,
 				110D75801B26CB620079273E /* Hale MeditatesTests */,

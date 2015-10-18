@@ -64,8 +64,9 @@ class PreSessionViewController: UIViewController {
             meditationsSettingsVc.disableEditingForMeditationTime = audioSession != nil
         }
         
-        if (segue.destinationViewController is TimedMeditationViewController) {
-            (segue.destinationViewController as! TimedMeditationViewController).model = self.model;
+        if let timeMeditationVC = segue.destinationViewController as? TimedMeditationViewController {
+            timeMeditationVC.model = self.model;
+            timeMeditationVC.audioSession = self.audioSession;
         }
     }
     

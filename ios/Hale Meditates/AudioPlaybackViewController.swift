@@ -9,6 +9,11 @@
 import UIKit
 import MediaPlayer
 
+protocol AudioPlaybackDelegate: class {
+    func handleTimeChange(current: Float, remaining: Float);
+//    func handlePlaybackFinished();
+}
+
 class AudioPlaybackViewController: UIViewController {
     
     @IBOutlet weak var playPauseButton: UIButton!
@@ -34,7 +39,8 @@ class AudioPlaybackViewController: UIViewController {
             return self.model?.audioUrl;
         }
     }
-    
+
+    weak var delegate: AudioPlaybackDelegate?
     
     @IBAction func sliderFinishedScrubbing(sender: UISlider) {
         self.isScrubbing = false;
@@ -76,6 +82,11 @@ class AudioPlaybackViewController: UIViewController {
     func pause() {
         self.audioPlayer.pause();
         self.setViewStateForPlayPauseButton(true);
+    }
+    
+    func play() {
+        self.audioPlayer.play();
+        self.setViewStateForPlayPauseButton(false);
     }
     
     func setInitialViewStates() {
@@ -125,6 +136,8 @@ class AudioPlaybackViewController: UIViewController {
             if (!isScrubbing) {
                 setViewStateForSlider(current);
             }
+
+            self.delegate?.handleTimeChange(current, remaining: remaining);
         }
     }
     
@@ -141,7 +154,6 @@ class AudioPlaybackViewController: UIViewController {
     func setViewStateForSlider(value: Float) {
         self.timeScrubSlider.value = value
     }
-    
     
     @IBAction func pauseOrPlay(sender: UIButton) {
         if (sender.tag == 0) {
@@ -173,7 +185,7 @@ class AudioPlaybackViewController: UIViewController {
         self.setViewStateForSlider(0);
         self.setViewStateForPlayPauseButton(true);
         self.setViewStateForTimeLabels(0, remaining: Float(CMTimeGetSeconds(self.audioPlayer.currentItem!.duration)))
-        self.audioPlayer.seekToTime(CMTimeMake(0, 1))
+//        self.audioPlayer.seekToTime(CMTimeMake(0, 1))
     }
     
     func setStatesForNewTrack() {
@@ -182,12 +194,11 @@ class AudioPlaybackViewController: UIViewController {
         }
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: self.currentItem);
-        self.currentItem = AVPlayerItem(asset: AudioCache.getAVAssetByUrlString(self.model!));
+        self.currentItem = AVPlayerItem(asset: AVAsset(URL: NSURL(string: self.model!.audioUrl!)!));
         if self.currentItem == nil {
             return;
         }
         self.audioPlayer.replaceCurrentItemWithPlayerItem(self.currentItem!);
-        self.audioPlayer.play();
         self.setViewStateForPlayPauseButton(false);
         self.playPauseButton.hidden = true;
         self.setViewStateForSlider(0);

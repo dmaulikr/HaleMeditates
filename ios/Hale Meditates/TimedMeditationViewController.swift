@@ -8,15 +8,18 @@
 
 import UIKit
 
-class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
+class TimedMeditationViewController: UIViewController, UIAlertViewDelegate, AudioPlaybackDelegate {
     
     var model: MeditationSettings?
 
+    @IBOutlet weak var audioPlaybackContainer: UIView!
     @IBOutlet weak var timerViewContainer: UIView!
     @IBOutlet weak var meditationLabel: UILabel!
     @IBOutlet weak var timerView: TimerView!
     
     var journalEntry = JournalEntry();
+    var audioSession: AudioSession?
+    var audioPlaybackController: AudioPlaybackViewController?
     
     var countup: Int? = 20 {
         didSet {
@@ -28,6 +31,7 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
             }
         }
     };
+
     var countdown: Int? = 10 {
         didSet {
             if (countdown != nil) {
@@ -102,6 +106,11 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
     }
     
     func startRelaxationPeriod() {
+        if audioSession != nil {
+            UIView.animateWithDuration(0.3, delay: 0.0, options: [], animations: ({
+                self.audioPlaybackContainer.alpha = 0.0;
+            }), completion: nil);
+        }
         timer?.invalidate();
         if (countup != nil) {
             timer = NSTimer.scheduledTimerWithTimeInterval(timerInterval,
@@ -118,18 +127,39 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
     func startMeditation() {
         journalEntry.startDate = NSDate();
         self.meditationLabel.text = "";
-        timer?.invalidate(); // use the same timer since we they're mutually exclusive
-        timer = NSTimer.scheduledTimerWithTimeInterval(timerInterval,
-            target: self,
-            selector: "handleMeditationTimer:",
-            userInfo: nil,
-            repeats: true)
-        timer?.tolerance = 0.1;
+        timer?.invalidate(); // use the same timer since they're mutually exclusive
+        
+        if audioSession == nil {
+            timer = NSTimer.scheduledTimerWithTimeInterval(timerInterval,
+                target: self,
+                selector: "handleMeditationTimer:",
+                userInfo: nil,
+                repeats: true)
+            timer?.tolerance = 0.1;
+        } else {
+            self.audioPlaybackController?.play();
+            UIView.animateWithDuration(0.3, delay: 0.0, options: [], animations: ({
+                self.audioPlaybackContainer.alpha = 1.0;
+            }), completion: nil);
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated);
         timer?.invalidate();
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        if audioSession != nil && audioPlaybackController == nil {
+            audioPlaybackController = UIUtil.getViewControllerFromStoryboard("AudioPlaybackViewController") as? AudioPlaybackViewController;
+            self.addChildViewController(self.audioPlaybackController!);
+            self.audioPlaybackController?.view.frame = self.audioPlaybackContainer.bounds;
+            self.audioPlaybackContainer.addSubview(self.audioPlaybackController!.view);
+            self.audioPlaybackController?.didMoveToParentViewController(self);
+            audioPlaybackController?.model = self.audioSession;
+            audioPlaybackController?.delegate = self;
+        }
     }
     
     override func viewDidLoad() {
@@ -145,6 +175,10 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
             updateMeditationText(countdown!, label: "Preparation");
         } else {
             self.meditationLabel.text = "";
+        }
+        
+        if audioSession == nil {
+            audioPlaybackContainer.removeFromSuperview();
         }
     }
     
@@ -163,6 +197,10 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
     }
     
     func handleMeditationTimer(timer: NSTimer) {
+        handleMeditationTimer();
+    }
+    
+    func handleMeditationTimer() {
         meditationTimeRemaining--;
     }
     
@@ -182,6 +220,14 @@ class TimedMeditationViewController: UIViewController, UIAlertViewDelegate {
         self.meditationLabel.text = formatText(time, label: label);
     }
     
+    
+    func handleTimeChange(current: Float, remaining: Float) {
+        let rem = Int(ceil(remaining));
+        if rem != meditationTimeRemaining {
+            print(rem);
+            meditationTimeRemaining = rem;
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

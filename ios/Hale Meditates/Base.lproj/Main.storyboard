@@ -1,13 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Audio Player-->
+        <scene sceneID="k4R-Tn-Zvh">
+            <objects>
+                <viewController storyboardIdentifier="AudioPlaybackViewController" title="Audio Player" id="pvF-gZ-SCj" customClass="AudioPlaybackViewController" customModule="Hale_Meditates" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QR4-5Y-Lfa"/>
+                        <viewControllerLayoutGuide type="bottom" id="iVb-Dg-aTH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fUX-AQ-7MM">
+                        <rect key="frame" x="0.0" y="0.0" width="256" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-5v-cjT">
+                                <rect key="frame" x="15" y="15" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-j5-cVM" userLabel="PlayPauseButton">
+                                <rect key="frame" x="16" y="14" width="18" height="22"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="85h-xW-4Zu"/>
+                                    <constraint firstAttribute="width" constant="24" id="IMk-9c-UN5"/>
+                                    <constraint firstAttribute="width" secondItem="Q9Q-j5-cVM" secondAttribute="height" multiplier="87:110" id="tem-4V-whW"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="play_icon_no_border">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IMk-9c-UN5"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseOrPlay:" destination="pvF-gZ-SCj" eventType="touchUpInside" id="1Ci-MT-8fE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-:--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vku-Gp-sgT" userLabel="CurrentPlaybackLabel">
+                                <rect key="frame" x="42" y="18" width="19" height="15"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mx5-aF-rF1">
+                                <rect key="frame" x="67" y="10" width="149" height="31"/>
+                                <animations/>
+                                <color key="tintColor" red="0.51764705882352935" green="0.50196078431372548" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="JRM-fA-6dy"/>
+                                    <constraint firstAttribute="width" constant="156" id="aOe-UZ-7Kp"/>
+                                </constraints>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JRM-fA-6dy"/>
+                                        <exclude reference="aOe-UZ-7Kp"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="sliderFinishedScrubbing:" destination="pvF-gZ-SCj" eventType="touchUpInside" id="Dvi-w8-una"/>
+                                    <action selector="sliderFinishedScrubbing:" destination="pvF-gZ-SCj" eventType="touchDragOutside" id="Muu-SE-JyB"/>
+                                    <action selector="sliderStartedScrubbing:" destination="pvF-gZ-SCj" eventType="touchDown" id="jqD-zN-kxz"/>
+                                    <action selector="updateSliderLabels:" destination="pvF-gZ-SCj" eventType="valueChanged" id="JgC-RM-hze"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-:--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-us-wjL" userLabel="TimeRemainingLabel">
+                                <rect key="frame" x="222" y="19" width="19" height="15"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="Q9Q-j5-cVM" firstAttribute="centerX" secondItem="hzg-5v-cjT" secondAttribute="centerX" id="0C0-K2-j28"/>
+                            <constraint firstItem="2PG-us-wjL" firstAttribute="centerY" secondItem="Q9Q-j5-cVM" secondAttribute="centerY" id="3no-lr-DDB"/>
+                            <constraint firstItem="Q9Q-j5-cVM" firstAttribute="leading" secondItem="fUX-AQ-7MM" secondAttribute="leadingMargin" id="5eB-gC-xHN"/>
+                            <constraint firstItem="Q9Q-j5-cVM" firstAttribute="leading" secondItem="fUX-AQ-7MM" secondAttribute="leadingMargin" id="93y-ru-vnj"/>
+                            <constraint firstItem="Mx5-aF-rF1" firstAttribute="leading" secondItem="Q9Q-j5-cVM" secondAttribute="trailing" constant="8" id="F4H-tU-aBD"/>
+                            <constraint firstItem="2PG-us-wjL" firstAttribute="leading" secondItem="Mx5-aF-rF1" secondAttribute="trailing" constant="8" id="H7m-fq-2ft"/>
+                            <constraint firstItem="Mx5-aF-rF1" firstAttribute="centerY" secondItem="Q9Q-j5-cVM" secondAttribute="centerY" id="LmJ-nk-Mph"/>
+                            <constraint firstAttribute="centerY" secondItem="Q9Q-j5-cVM" secondAttribute="centerY" id="Qmr-rO-h5S"/>
+                            <constraint firstItem="2PG-us-wjL" firstAttribute="centerY" secondItem="Q9Q-j5-cVM" secondAttribute="centerY" constant="0.5" id="Rae-eT-pvU"/>
+                            <constraint firstItem="Mx5-aF-rF1" firstAttribute="centerY" secondItem="Q9Q-j5-cVM" secondAttribute="centerY" id="WA7-kK-KHZ"/>
+                            <constraint firstItem="Q9Q-j5-cVM" firstAttribute="centerY" secondItem="hzg-5v-cjT" secondAttribute="centerY" id="Woe-DD-MiY"/>
+                            <constraint firstAttribute="centerX" secondItem="Q9Q-j5-cVM" secondAttribute="centerX" id="ZU4-RA-7su"/>
+                            <constraint firstItem="vku-Gp-sgT" firstAttribute="centerY" secondItem="Q9Q-j5-cVM" secondAttribute="centerY" id="bW4-QH-beX"/>
+                            <constraint firstItem="Mx5-aF-rF1" firstAttribute="leading" secondItem="2PG-us-wjL" secondAttribute="trailing" constant="8" id="fUs-8F-rp8"/>
+                            <constraint firstAttribute="centerY" secondItem="Q9Q-j5-cVM" secondAttribute="centerY" id="flj-sp-oue"/>
+                            <constraint firstItem="Q9Q-j5-cVM" firstAttribute="leading" secondItem="Mx5-aF-rF1" secondAttribute="trailing" constant="8" id="h8g-pr-C6c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2PG-us-wjL" secondAttribute="trailing" id="kyf-5P-aEd"/>
+                            <constraint firstItem="vku-Gp-sgT" firstAttribute="leading" secondItem="Q9Q-j5-cVM" secondAttribute="trailing" constant="8" id="m0n-Ho-bUs"/>
+                            <constraint firstItem="Mx5-aF-rF1" firstAttribute="leading" secondItem="vku-Gp-sgT" secondAttribute="trailing" constant="8" id="q6c-ny-8JE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="93y-ru-vnj"/>
+                                <exclude reference="ZU4-RA-7su"/>
+                                <exclude reference="flj-sp-oue"/>
+                                <exclude reference="h8g-pr-C6c"/>
+                                <exclude reference="F4H-tU-aBD"/>
+                                <exclude reference="WA7-kK-KHZ"/>
+                                <exclude reference="fUs-8F-rp8"/>
+                                <exclude reference="3no-lr-DDB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="R9C-tm-JFG"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="256" height="50"/>
+                    <connections>
+                        <outlet property="activityView" destination="hzg-5v-cjT" id="dBb-gY-2Ax"/>
+                        <outlet property="currentPlaybackLabel" destination="vku-Gp-sgT" id="eYq-gg-cbZ"/>
+                        <outlet property="playPauseButton" destination="Q9Q-j5-cVM" id="u2I-Gr-TaZ"/>
+                        <outlet property="timeLeftLabel" destination="2PG-us-wjL" id="1Ml-B8-OaC"/>
+                        <outlet property="timeScrubSlider" destination="Mx5-aF-rF1" id="N3t-q3-SK0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QK1-Ju-xEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-325" y="3481"/>
+        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -631,7 +754,7 @@ technology</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relax and Be Free" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPb-iI-Vjf">
                                 <rect key="frame" x="20" y="314" width="560" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.15000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_gray" translatesAutoresizingMaskIntoConstraints="NO" id="f57-Zf-9sJ">
@@ -1139,17 +1262,17 @@ technology</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bid-1X-jCF" userLabel="TopViewContainer">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="504"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bid-1X-jCF" userLabel="TopViewContainer">
+                                <rect key="frame" x="4" y="0.0" width="592" height="504"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7L0-Wl-LXh" userLabel="TimerViewContainer">
-                                        <rect key="frame" x="96" y="48" width="408" height="408"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7L0-Wl-LXh" userLabel="TimerViewContainer">
+                                        <rect key="frame" x="94.5" y="50.5" width="403" height="403"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibt-vv-rgY" customClass="TimerView" customModule="Hale_Meditates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="408" height="408"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibt-vv-rgY" customClass="TimerView" customModule="Hale_Meditates" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="403" height="403"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wj5-aP-D2M">
-                                                <rect key="frame" x="0.0" y="171" width="408" height="66"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wj5-aP-D2M">
+                                                <rect key="frame" x="0.0" y="168.5" width="403" height="66"/>
                                                 <string key="text">10s
 Preperation</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
@@ -1168,15 +1291,23 @@ Preperation</string>
                                             <constraint firstAttribute="height" secondItem="ibt-vv-rgY" secondAttribute="height" id="qB0-Qu-iFI"/>
                                         </constraints>
                                     </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-72-S9i" userLabel="audioPlaybackContainer">
+                                        <rect key="frame" x="74.5" y="384" width="444" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="rhg-aF-VMw"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="gD1-72-S9i" firstAttribute="width" secondItem="bid-1X-jCF" secondAttribute="width" multiplier="3:4" id="4rG-4U-A0j"/>
                                     <constraint firstItem="7L0-Wl-LXh" firstAttribute="width" secondItem="bid-1X-jCF" secondAttribute="width" multiplier="68:100" id="F8m-kD-jRm"/>
+                                    <constraint firstItem="gD1-72-S9i" firstAttribute="centerX" secondItem="bid-1X-jCF" secondAttribute="centerX" id="YUz-dF-3yK"/>
                                     <constraint firstAttribute="centerX" secondItem="7L0-Wl-LXh" secondAttribute="centerX" id="qwD-HN-f3G"/>
                                     <constraint firstAttribute="centerY" secondItem="7L0-Wl-LXh" secondAttribute="centerY" id="wAY-zW-0Gv"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMP-OL-MDX">
-                                <rect key="frame" x="0.0" y="504" width="600" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMP-OL-MDX">
+                                <rect key="frame" x="4" y="504" width="600" height="47"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="Finish">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1186,8 +1317,8 @@ Preperation</string>
                                     <action selector="finishMeditation" destination="JLb-a0-6PB" eventType="touchUpInside" id="4qw-Cn-xra"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tU2-Jn-MHh" userLabel="Back">
-                                <rect key="frame" x="16" y="28" width="25" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tU2-Jn-MHh" userLabel="Back">
+                                <rect key="frame" x="20" y="28" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Qmp-Ee-kR6"/>
                                     <constraint firstAttribute="width" constant="25" id="ery-RC-nWD"/>
@@ -1202,6 +1333,7 @@ Preperation</string>
                         </subviews>
                         <color key="backgroundColor" red="0.31372549020000001" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="iMP-OL-MDX" firstAttribute="top" secondItem="gD1-72-S9i" secondAttribute="bottom" constant="40" id="9Nj-o5-gL8"/>
                             <constraint firstItem="bid-1X-jCF" firstAttribute="top" secondItem="RMl-LP-iXJ" secondAttribute="topMargin" id="JsY-zY-cH5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bid-1X-jCF" secondAttribute="trailing" constant="-16" id="KLA-5B-Z71"/>
                             <constraint firstItem="537-X5-NyM" firstAttribute="top" secondItem="iMP-OL-MDX" secondAttribute="bottom" id="Wht-5z-lRK"/>
@@ -1214,6 +1346,7 @@ Preperation</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audioPlaybackContainer" destination="gD1-72-S9i" id="zii-NY-OE8"/>
                         <outlet property="meditationLabel" destination="Wj5-aP-D2M" id="6q1-8I-km6"/>
                         <outlet property="timerView" destination="ibt-vv-rgY" id="gNE-Jc-vZN"/>
                         <outlet property="timerViewContainer" destination="7L0-Wl-LXh" id="vvS-dV-p7a"/>
@@ -1786,6 +1919,7 @@ Preperation</string>
         <image name="home-icon" width="25" height="25"/>
         <image name="journals-icon" width="25" height="22"/>
         <image name="next_icon" width="44" height="42"/>
+        <image name="play_icon_no_border" width="87" height="107"/>
         <image name="portrait_icon" width="234" height="219"/>
         <image name="technology_icon" width="96" height="164"/>
         <image name="time_icon" width="31" height="31"/>
