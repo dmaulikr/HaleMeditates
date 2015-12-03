@@ -10,10 +10,12 @@ import UIKit
 
 class CallToActionViewController: UIViewController {
 
+    @IBOutlet weak var proportialConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         self.navigationItem.title = "Home";
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +29,14 @@ class CallToActionViewController: UIViewController {
         super.viewWillAppear(animated);
     }
     
+    @IBAction func openGoPremiumWebPage() {
+        let controller = UIUtil.getViewControllerFromStoryboard("WebViewController") as! WebViewController
+        if let URL = NSURL(string: "http://www.wired.com") {
+            controller.url = URL;
+            controller.view.frame = self.navigationController!.view.frame;
+            self.presentViewController(controller, animated: true, completion: nil);
+        }
+    }
 
     /*
     // MARK: - Navigation
