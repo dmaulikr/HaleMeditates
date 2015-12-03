@@ -13,19 +13,20 @@
 		110D75731B26CB620079273E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110D75711B26CB620079273E /* Main.storyboard */; };
 		110D75751B26CB620079273E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110D75741B26CB620079273E /* Images.xcassets */; };
 		110D75781B26CB620079273E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110D75761B26CB620079273E /* LaunchScreen.xib */; };
+		1116E1291C10A458004288AB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116E1281C10A458004288AB /* WebViewController.swift */; };
 		1137F0831B3F9A2A0068DE5C /* JoyrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */; };
 		1137F0851B3FB6FE0068DE5C /* SessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0841B3FB6FE0068DE5C /* SessionsTableViewController.swift */; };
 		1137F0871B3FBA840068DE5C /* CallToActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */; };
 		1137F0891B408FA30068DE5C /* TimedMeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F0881B408FA30068DE5C /* TimedMeditationViewController.swift */; };
 		1137F08C1B4092A10068DE5C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1137F08B1B4092A10068DE5C /* TimerView.swift */; };
-		113D99F01BC5A9C900DA11BF /* payload.json in Resources */ = {isa = PBXBuildFile; fileRef = 113D99EF1BC5A9C900DA11BF /* payload.json */; settings = {ASSET_TAGS = (); }; };
+		113D99F01BC5A9C900DA11BF /* payload.json in Resources */ = {isa = PBXBuildFile; fileRef = 113D99EF1BC5A9C900DA11BF /* payload.json */; };
 		1174C7EA1B9A0DB70070DE0C /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7E91B9A0DB70070DE0C /* SessionTableViewCell.swift */; };
 		1174C7EC1B9A0E2C0070DE0C /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7EB1B9A0E2C0070DE0C /* AudioSession.swift */; };
 		1174C7F01B9A10E50070DE0C /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7EF1B9A10E50070DE0C /* HttpUtil.swift */; };
 		1174C7F21B9A11190070DE0C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F11B9A11190070DE0C /* Util.swift */; };
 		1174C7F41B9A18F50070DE0C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F31B9A18F50070DE0C /* API.swift */; };
 		1174C7F61B9A287F0070DE0C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174C7F51B9A287F0070DE0C /* Globals.swift */; };
-		1179A1221BD2BA46005CCE52 /* AudioPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179A1211BD2BA46005CCE52 /* AudioPlaybackViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1179A1221BD2BA46005CCE52 /* AudioPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179A1211BD2BA46005CCE52 /* AudioPlaybackViewController.swift */; };
 		1179A1241BD2BBA6005CCE52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */; };
 		119818441B2957650008FF75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119818431B2957650008FF75 /* SignUpViewController.swift */; };
 		11A984821B50FCEB005DF3D4 /* PreSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A984811B50FCEB005DF3D4 /* PreSessionViewController.swift */; };
@@ -51,6 +52,7 @@
 		110D75771B26CB620079273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		110D75821B26CB620079273E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		110D75831B26CB620079273E /* Hale_MeditatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hale_MeditatesTests.swift; sourceTree = "<group>"; };
+		1116E1281C10A458004288AB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoyrideViewController.swift; sourceTree = "<group>"; };
 		1137F0841B3FB6FE0068DE5C /* SessionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsTableViewController.swift; sourceTree = "<group>"; };
 		1137F0861B3FBA840068DE5C /* CallToActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallToActionViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				11A9848A1B51FE49005DF3D4 /* JournalsTableViewController.swift */,
 				11A9848E1B520591005DF3D4 /* JournalsContainerViewController.swift */,
 				1179A1211BD2BA46005CCE52 /* AudioPlaybackViewController.swift */,
+				1116E1281C10A458004288AB /* WebViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -273,7 +276,7 @@
 				TargetAttributes = {
 					110D75671B26CB620079273E = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = BM7DCU5YJ8;
+						DevelopmentTeam = 239WD2J98X;
 					};
 				};
 			};
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A9848F1B520591005DF3D4 /* JournalsContainerViewController.swift in Sources */,
+				1116E1291C10A458004288AB /* WebViewController.swift in Sources */,
 				11A984821B50FCEB005DF3D4 /* PreSessionViewController.swift in Sources */,
 				1137F08C1B4092A10068DE5C /* TimerView.swift in Sources */,
 				119818441B2957650008FF75 /* SignUpViewController.swift in Sources */,
@@ -501,10 +505,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Hale Meditates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ".$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -514,10 +520,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Hale Meditates/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ".$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
