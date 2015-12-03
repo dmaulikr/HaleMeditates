@@ -75,6 +75,10 @@ var UserSchema = new Schema({
 		}],
 		default: ['user']
 	},
+	birthDate: {
+		type: Date,
+		required: 'Please provide a birth date'
+	},
 	updated: {
 		type: Date
 	},
