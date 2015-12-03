@@ -7,10 +7,49 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
+
+    @IBOutlet weak var errorMessageLabel: UILabel!
+    
+    @IBOutlet weak var fullNameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var birthdayTextField: UITextField!
+    
+    var errorMessage: String? {
+        didSet {
+            setErrorMessageLabelState();
+        }
+    }
+    
+    var firstName: String? {
+        get {
+            if let fullName = fullNameTextField?.text {
+                let fullNameArr = fullName.characters.split{$0 == " "}.map(String.init)
+                return fullNameArr.first;
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    var lastName: String? {
+        get {
+            if let fullName = fullNameTextField?.text {
+                let fullNameArr = fullName.characters.split{$0 == " "}.map(String.init)
+                return (fullNameArr.count > 1) ? fullNameArr.last : nil
+            } else {
+                return nil
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,21 +59,58 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         picker.addTarget(self, action: "dateTextField:", forControlEvents: UIControlEvents.ValueChanged)
         birthdayTextField.inputView = picker;
         
-//        var toolbar = UIToolbar(frame: CGRectMake(0, 0, self.view.bounds.width, 44));
-//        toolbar.barStyle = UIBarStyle.Default;
-//        var barButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil);
-//        var next = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "endEditing")
-//        toolbar.items = [barButtonItem, next];
-//        birthdayTextField.inputAccessoryView = toolbar;
+        self.fullNameTextField.delegate = self;
+        self.emailTextField.delegate = self;
+        self.passwordTextField.delegate = self;
+    }
     
-    
-        // Do any additional setup after loading the view.
+    func setUI() {
+        setErrorMessageLabelState();
+        setSignUpButtonState();
     }
     
     func endEditing() {
         self.view.endEditing(true);
     }
+    
+    func setErrorMessageLabelState() {
+        self.errorMessageLabel.hidden = errorMessage == nil;
+        self.errorMessageLabel.text = errorMessage;
+    }
 
+    @IBAction func textFieldChanged(sender: UITextField) {
+        setSignUpButtonState();
+        self.errorMessage = nil;
+    }
+    
+    func setSignUpButtonState(force: Bool? = nil) {
+        if let forcedState = force {
+            self.signUpButton.enabled = forcedState;
+            self.signUpButton.alpha = (forcedState) ? 1.0 : 0.5;
+            return;
+        }
+        
+        if self.emailTextField.text == nil || self.passwordTextField.text == nil || self.fullNameTextField == nil || self.birthdayTextField == nil {
+            self.signUpButton.enabled = false;
+            self.signUpButton.alpha = 0.5;
+            return;
+        }
+        
+        if !(self.emailTextField.text!.characters.count > 0) || !(self.passwordTextField.text!.characters.count > 0) || !(self.fullNameTextField.text!.characters.count > 0) || !(self.birthdayTextField.text!.characters.count > 0) {
+            self.signUpButton.enabled = false;
+            self.signUpButton.alpha = 0.5;
+            return;
+        }
+        
+        self.signUpButton.enabled = true;
+        self.signUpButton.alpha = 1.0;
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return false;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,16 +126,44 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         birthdayTextField.text = dateString;
     }
     
-    @IBAction func transitionToSignInViewController() {
-        let dest = UIUtil.getViewControllerFromStoryboard("SignInVC") as!UIViewController;
+    @IBAction func attemptSignUp() {
+        setSignUpButtonState(false);
+        let params: [String : AnyObject] = [
+            "firstName": self.firstName ?? "",
+            "lastName": self.lastName ?? "",
+            "username": self.emailTextField.text ?? "",
+            "email": self.emailTextField.text ?? "",
+            "password": self.passwordTextField.text ?? "",
+            "roles": ["user"],
+            "birthDate": self.birthdayTextField.text ?? ""
+        ]
+        Alamofire.request(.POST, Globals.API_ROOT + "/auth/signup", parameters: params)
+            .responseJSON { response in
+                if response.response?.statusCode == 200 {
+                    let dest = UIUtil.getViewControllerFromStoryboard("JoyrideViewController") as! UIViewController;
+                    self.transitionToViewController(dest, transition: UIViewAnimationTransition.FlipFromLeft);
+                } else {
+                    print(response.result.value!);
+                    if let errorMsg = (response.result.value as? NSDictionary)?["message"] as? String {
+                        self.errorMessage = errorMsg;
+                        self.setSignUpButtonState(true);
+                    }
+                }
+        }
+    }
+    
+    func transitionToViewController(dest: UIViewController, transition: UIViewAnimationTransition = UIViewAnimationTransition.FlipFromRight) {
         UIView.beginAnimations("LeftFlip", context: nil);
         UIView.setAnimationDuration(0.5);
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut);
-        UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromLeft, forView: self.view.superview!, cache: true);
+        UIView.setAnimationTransition(transition, forView: self.view.superview!, cache: true);
         UIView.commitAnimations();
-        
         self.view.window?.rootViewController = dest;
-        
+    }
+    
+    @IBAction func transitionToSignInViewController() {
+        let dest = UIUtil.getViewControllerFromStoryboard("SignInVC") as!UIViewController;
+        transitionToViewController(dest, transition: UIViewAnimationTransition.FlipFromLeft);
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

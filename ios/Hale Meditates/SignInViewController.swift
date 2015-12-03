@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
-    
+    @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var errorMessage: String? {
+        didSet {
+            setErrorMessageLabelState();
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +29,32 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         setUI()
     }
     
+    
+    @IBAction func textFieldChanged(sender: UITextField) {
+        setSignInButtonState();
+        self.errorMessage = nil;
+    }
+    
+    
+    
     @IBAction func attemptToSignIn() {
-        
+        setSignInButtonState(false);
+        Alamofire.request(.POST, Globals.API_ROOT + "/auth/signin", parameters:
+            [
+                "username": self.emailTextField.text ?? "",
+                "password": self.passwordTextField.text ?? ""
+            ])
+            .responseJSON { response in
+                if response.response?.statusCode == 200 {
+                    self.transitionToTabBarController();
+                } else {
+                    print(response.result.value!);
+                    if let errorMsg = (response.result.value as? NSDictionary)?["message"] as? String {
+                        self.errorMessage = errorMsg;
+                        self.setSignInButtonState(true);
+                    }
+                }
+        }
     }
     
     func transitionToTabBarController() {
@@ -35,7 +67,37 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setUI() {
+        setErrorMessageLabelState();
+        setSignInButtonState();
+    }
+    
+    func setErrorMessageLabelState() {
+        self.errorMessageLabel.hidden = errorMessage == nil;
+        self.errorMessageLabel.text = errorMessage;
+    }
+    
+    func setSignInButtonState (force: Bool? = nil) {
+        if let forcedState = force {
+            self.signInButton.enabled = forcedState;
+            self.signInButton.alpha = (forcedState) ? 1.0 : 0.5;
+            return;
+        }
         
+        
+        if self.emailTextField.text == nil || self.passwordTextField.text == nil {
+            self.signInButton.enabled = false;
+            self.signInButton.alpha = 0.5;
+            return;
+        }
+        
+        if !(self.emailTextField.text!.characters.count > 0) || !(self.passwordTextField.text!.characters.count > 0) {
+            self.signInButton.enabled = false;
+            self.signInButton.alpha = 0.5;
+            return;
+        }
+    
+        self.signInButton.enabled = true;
+        self.signInButton.alpha = 1.0;
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +122,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, withEvent: event);
         self.view.endEditing(true);
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return false;
+    }
+
 
 
 }
