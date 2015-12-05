@@ -22,16 +22,18 @@ exports.update = function(req, res) {
 
 	if (user) {
 		// Merge existing user
-		user = _.extend(user, req.body);
-		user.updated = Date.now();
-		user.displayName = user.firstName + ' ' + user.lastName;
+		var userCopy = req.body;
+		userCopy.updated = Date.now();
 
-		user.save(function(err) {
+		User.update({_id: user.id}, {$set: userCopy}, function(err) {
 			if (err) {
 				return res.status(400).send({
 					message: errorHandler.getErrorMessage(err)
 				});
 			} else {
+				user = _.extend(user, userCopy);
+				user.updated = Date.now();
+				user.displayName = user.firstName + ' ' + user.lastName;
 				req.login(user, function(err) {
 					if (err) {
 						res.status(400).send(err);
@@ -46,6 +48,54 @@ exports.update = function(req, res) {
 			message: 'User is not signed in'
 		});
 	}
+};
+
+exports.addJournalEntry = function (req, res) {
+	var user = req.user;
+	var journalEntry = req.body;
+	user.journals.push(journalEntry);
+	user.save(function(err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(user);
+		}
+	});
+};
+
+exports.editJournalEntry = function (req, res) {
+	var user = req.user;
+	var journalEntry = req.body;
+	var indexToEdit = _.findIndex(user.journals, function(journal) {
+		return journal._id == journalEntry._id;
+	});
+
+	if (indexToEdit === -1) {
+		return res.status(400).send({
+			message: "Could not find corresponding journal entry with id " + journalEntry._id
+		});
+	}
+
+	user.journals[indexToEdit] = _.extend(user.journals[indexToEdit], journalEntry);
+	User.update({_id: user.id}, {$set: {
+		journals: user.journals
+	}}, function (err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			req.login(user, function(err) {
+				if (err) {
+					res.status(400).send(err);
+				} else {
+					res.json(user);
+				}
+			});
+		}
+	});
 };
 
 /**
