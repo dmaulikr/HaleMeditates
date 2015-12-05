@@ -11,7 +11,11 @@ import UIKit
 class JournalsTableViewController: UITableViewController {
     
     let reuseId = "JournalsTableViewCell";
-    var model: Array<JournalEntry>?
+    var model: Array<JournalEntry>? {
+        didSet {
+            self.tableView.reloadData();
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

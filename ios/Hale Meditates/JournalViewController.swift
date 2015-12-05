@@ -84,6 +84,18 @@ class JournalViewController: UIViewController, UITextViewDelegate {
         self.navigationController?.popViewControllerAnimated(true);
     }
     
+    @IBAction func saveJournalAndExit() {
+        model?.entry = textView.text;
+        if model?.id != nil {
+            API.editJournalEntry(self.model!, callback: {(success: Bool) in
+                self.exitView();
+            });
+        } else {
+            API.addJournalEntry(self.model!, callback: {(success: Bool) in
+                self.exitView();
+            });
+        }
+    }
     
     /*
     // MARK: - Navigation
