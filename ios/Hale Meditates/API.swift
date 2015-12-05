@@ -17,31 +17,48 @@ class API {
         }
     }
     
-    class func getAudioSessions(callback: (Array<AudioSession>?) -> Void) {
-//        let dataURL =  NSURL(string: Globals.API_ROOT + "/audios");
-//        let jsonData = NSData(contentsOfURL: dataURL!);
-//        var dataString: NSString?
-//        if jsonData == nil {
-//            if let payload = API.staticPayload {
-//                dataString = NSString(string: payload);
-//            }
-//        } else {
-//            dataString = NSString(data: jsonData!, encoding: NSUTF8StringEncoding);
-//        }
-//        if dataString == nil {
-//            callback(nil);
-//            return;
-//        }
-//        let utfJsonData = dataString!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false);
-//        
-//        let parseResult: AnyObject?
-//        do {
-//            parseResult = try NSJSONSerialization.JSONObjectWithData(utfJsonData!, options: [])
-//        } catch _ as NSError {
-//            parseResult = nil
-//        };
-//        if ((parseResult) != nil) {
+    class func addJournalEntry(journalEntry: JournalEntry, callback: (success: Bool) -> Void) {
+        if journalEntry.startDate == nil || journalEntry.endDate == nil {
+            Util.enqueue({ callback(success: false); }, priority: Util.PRIORITY.SUPER_HIGH);
+            return;
+        }
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        let params: [String : AnyObject] = [
+            "startDate": dateFormatter.stringFromDate(journalEntry.startDate!),
+            "endDate": dateFormatter.stringFromDate(journalEntry.endDate!),
+            "entry": journalEntry.entry ?? ""
+        ]
+        
+        Alamofire.request(.POST, Globals.API_ROOT + "/addJournalEntry", parameters: params)
+            .responseJSON { response in
+                if response.response?.statusCode == 200 {
+                    callback(success: true);
+                } else {
+                    callback(success: false);
+                }
+        }
+    }
+    
+    class func editJournalEntry(journalEntry: JournalEntry, callback: (success: Bool) -> Void) {
+        let params: [String : AnyObject] = [
+            "entry": journalEntry.entry ?? "",
+            "_id": journalEntry.id!
+        ]
+        
+        Alamofire.request(.PUT, Globals.API_ROOT + "/editJournalEntry", parameters: params)
+            .responseJSON { response in
+                if response.response?.statusCode == 200 {
+                    callback(success: true);
+                } else {
+                    callback(success: false);
+                }
+        }
+    }
+    
+    class func getAudioSessions(callback: (Array<AudioSession>?) -> Void) {
         var audios: Array<AudioSession> = []
         Alamofire.request(.GET, Globals.API_ROOT + "/audios")
             .responseJSON { response in
@@ -64,7 +81,6 @@ class API {
         }
     }
     
-    
     class func getJournals(callback: (Array<JournalEntry>?) -> Void) {
         var entries: Array<JournalEntry> = [];
         Alamofire.request(.GET, Globals.API_ROOT + "/users/me")
@@ -73,17 +89,19 @@ class API {
                     if let user = JSON as? NSDictionary {
                         if let journals = user["journals"] as? Array<NSDictionary> {
                             let dateFormatter = NSDateFormatter()
-                            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.zzzZ"
+                            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                             for journal in journals {
                                 let entry = JournalEntry();
                                 entry.startDate = dateFormatter.dateFromString(journal["startDate"] as! String);
                                 entry.endDate = dateFormatter.dateFromString(journal["endDate"] as! String);
                                 entry.entry = journal["entry"] as? String
+                                entry.id = journal["_id"] as? String
                                 entries.append(entry);
                             }
                         }
                     }
                 }
+                
                 callback(entries);
         }
     }

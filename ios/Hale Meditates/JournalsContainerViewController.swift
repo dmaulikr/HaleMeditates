@@ -16,26 +16,28 @@ class JournalsContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if (DataContext.journalEntries != nil) {
-            self.model = DataContext.journalEntries;
-            addJournalsTableViewController();
-        } else {
-            DataContext.getJournalEntries(({ (journalEntries: Array<JournalEntry>?) in
-                self.model = journalEntries;
-                dispatch_async(dispatch_get_main_queue(), ({
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        DataContext.getJournalEntries(({ (journalEntries: Array<JournalEntry>?) in
+            self.model = journalEntries;
+            dispatch_async(dispatch_get_main_queue(), ({
+                
+                if self.journalsTableViewController == nil {
                     self.addJournalsTableViewController();
-                }));
+                } else {
+                    self.journalsTableViewController?.model = self.model;
+                }
+                
             }));
-        }
-
-        // Do any additional setup after loading the view.
+        }));
     }
     
     func addJournalsTableViewController() {
         self.journalsTableViewController = UIUtil.getViewControllerFromStoryboard("JournalsTableViewController") as? JournalsTableViewController;
-        self.journalsTableViewController?.model = self.model;
         self.addChildViewController(self.journalsTableViewController!);
+        self.journalsTableViewController?.model = self.model;
         self.journalsTableViewController?.view.frame = self.journalsTableViewContainer.bounds;
         self.journalsTableViewContainer.addSubview(self.journalsTableViewController!.view);
         self.journalsTableViewController?.didMoveToParentViewController(self);

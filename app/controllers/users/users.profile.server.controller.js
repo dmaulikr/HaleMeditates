@@ -54,7 +54,9 @@ exports.addJournalEntry = function (req, res) {
 	var user = req.user;
 	var journalEntry = req.body;
 	user.journals.push(journalEntry);
-	user.save(function(err) {
+	User.update({_id: user.id}, {$set: {
+		journals: user.journals
+	}}, function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

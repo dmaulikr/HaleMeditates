@@ -12,6 +12,7 @@ class JournalEntry {
     var startDate:NSDate?
     var endDate:NSDate?
     var entry: String?
+    var id: String?
     
     var startDateString: String? {
         get {
