@@ -1335,8 +1335,8 @@ technology</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgV-PI-9aU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgV-PI-9aU">
+                                <rect key="frame" x="4" y="0.0" width="600" height="226"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-Ii-XXx">
                                         <rect key="frame" x="232" y="45" width="136" height="136"/>
@@ -1361,10 +1361,10 @@ technology</string>
                                     <constraint firstAttribute="centerX" secondItem="oB7-Ii-XXx" secondAttribute="centerX" id="v1v-w7-x7c"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5I9-F7-y1S">
-                                <rect key="frame" x="0.0" y="226" width="600" height="226"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5I9-F7-y1S">
+                                <rect key="frame" x="4" y="226" width="600" height="226"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nZ-IO-AgE">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nZ-IO-AgE">
                                         <rect key="frame" x="227.5" y="45" width="145" height="136"/>
                                         <animations/>
                                         <constraints>
@@ -1387,10 +1387,10 @@ technology</string>
                                     <constraint firstAttribute="centerX" secondItem="7nZ-IO-AgE" secondAttribute="centerX" id="wqh-Rl-E6I"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8xp-Mu-9zI">
-                                <rect key="frame" x="0.0" y="452" width="600" height="99"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xp-Mu-9zI">
+                                <rect key="frame" x="4" y="452" width="600" height="99"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-pc-j1r">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-pc-j1r">
                                         <rect key="frame" x="20" y="26" width="560" height="47"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
@@ -1424,9 +1424,10 @@ technology</string>
                             <constraint firstItem="rgV-PI-9aU" firstAttribute="height" secondItem="DPT-aK-rTC" secondAttribute="height" multiplier="41:100" id="Wfi-gc-4YL"/>
                             <constraint firstItem="rgV-PI-9aU" firstAttribute="height" secondItem="DPT-aK-rTC" secondAttribute="height" multiplier="0.5" id="aSx-EW-mwP"/>
                             <constraint firstItem="rgV-PI-9aU" firstAttribute="width" secondItem="DPT-aK-rTC" secondAttribute="width" id="biJ-yA-B6g"/>
+                            <constraint firstItem="5I9-F7-y1S" firstAttribute="height" secondItem="rgV-PI-9aU" secondAttribute="height" id="cPO-e2-xo7"/>
                             <constraint firstItem="5I9-F7-y1S" firstAttribute="leading" secondItem="DPT-aK-rTC" secondAttribute="leadingMargin" constant="-16" id="j1r-DG-w7s"/>
                             <constraint firstItem="5I9-F7-y1S" firstAttribute="height" secondItem="DPT-aK-rTC" secondAttribute="height" multiplier="4:10" id="jwF-rC-vcw"/>
-                            <constraint firstItem="5I9-F7-y1S" firstAttribute="height" secondItem="rgV-PI-9aU" secondAttribute="height" multiplier="1:2" priority="1" id="peC-1x-AFR"/>
+                            <constraint firstItem="5I9-F7-y1S" firstAttribute="height" secondItem="rgV-PI-9aU" secondAttribute="height" multiplier="41:100" priority="1" id="peC-1x-AFR"/>
                             <constraint firstItem="ibw-0G-Wi1" firstAttribute="top" secondItem="8xp-Mu-9zI" secondAttribute="bottom" id="qG7-ti-Z49"/>
                             <constraint firstItem="5I9-F7-y1S" firstAttribute="width" secondItem="DPT-aK-rTC" secondAttribute="width" id="sBM-yu-XEr"/>
                             <constraint firstItem="rgV-PI-9aU" firstAttribute="leading" secondItem="DPT-aK-rTC" secondAttribute="leadingMargin" constant="-16" id="uR4-XS-8uV"/>
@@ -1435,6 +1436,8 @@ technology</string>
                             <mask key="constraints">
                                 <exclude reference="aSx-EW-mwP"/>
                                 <exclude reference="jwF-rC-vcw"/>
+                                <exclude reference="peC-1x-AFR"/>
+                                <exclude reference="9i1-9C-sYh"/>
                             </mask>
                         </variation>
                     </view>

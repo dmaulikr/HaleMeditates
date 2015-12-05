@@ -98,7 +98,7 @@ var UserSchema = new Schema({
 			type: Date
 		},
 		endDate: {
-			type: Date,
+			type: Date
 		},
 		entry: {
 			type: String
