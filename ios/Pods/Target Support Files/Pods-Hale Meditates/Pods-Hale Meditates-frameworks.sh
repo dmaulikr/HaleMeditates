@@ -85,7 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Hale Meditates/Alamofire.framework"
+  install_framework "Pods-Hale Meditates/Bolts.framework"
+  install_framework "Pods-Hale Meditates/Parse.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Hale Meditates/Alamofire.framework"
+  install_framework "Pods-Hale Meditates/Bolts.framework"
+  install_framework "Pods-Hale Meditates/Parse.framework"
 fi

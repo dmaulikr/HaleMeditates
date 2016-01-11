@@ -50,8 +50,6 @@
 		110D75721B26CB620079273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		110D75741B26CB620079273E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		110D75771B26CB620079273E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		110D75821B26CB620079273E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		110D75831B26CB620079273E /* Hale_MeditatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hale_MeditatesTests.swift; sourceTree = "<group>"; };
 		1116E1281C10A458004288AB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1137F0821B3F9A2A0068DE5C /* JoyrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoyrideViewController.swift; sourceTree = "<group>"; };
 		1137F0841B3FB6FE0068DE5C /* SessionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsTableViewController.swift; sourceTree = "<group>"; };
@@ -105,14 +103,7 @@
 		110D755F1B26CB620079273E = {
 			isa = PBXGroup;
 			children = (
-				1179A12D1BD2C03E005CCE52 /* MobileCoreServices.framework */,
-				1179A12B1BD2BFE9005CCE52 /* AssetsLibrary.framework */,
-				1179A1291BD2BE4C005CCE52 /* MediaPlayer.framework */,
-				1179A1251BD2BE0C005CCE52 /* CoreMedia.framework */,
-				1179A1261BD2BE0C005CCE52 /* Foundation.framework */,
-				1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */,
 				110D756A1B26CB620079273E /* Hale Meditates */,
-				110D75801B26CB620079273E /* Hale MeditatesTests */,
 				110D75691B26CB620079273E /* Products */,
 				849186E8B7CCD13784FDFF64 /* Pods */,
 				DB9C298DF887FB3A9C75D2B7 /* Frameworks */,
@@ -147,23 +138,6 @@
 			children = (
 				110D756C1B26CB620079273E /* Info.plist */,
 				113D99EF1BC5A9C900DA11BF /* payload.json */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		110D75801B26CB620079273E /* Hale MeditatesTests */ = {
-			isa = PBXGroup;
-			children = (
-				110D75831B26CB620079273E /* Hale_MeditatesTests.swift */,
-				110D75811B26CB620079273E /* Supporting Files */,
-			);
-			path = "Hale MeditatesTests";
-			sourceTree = "<group>";
-		};
-		110D75811B26CB620079273E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				110D75821B26CB620079273E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -235,6 +209,12 @@
 		DB9C298DF887FB3A9C75D2B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1179A12D1BD2C03E005CCE52 /* MobileCoreServices.framework */,
+				1179A12B1BD2BFE9005CCE52 /* AssetsLibrary.framework */,
+				1179A1291BD2BE4C005CCE52 /* MediaPlayer.framework */,
+				1179A1251BD2BE0C005CCE52 /* CoreMedia.framework */,
+				1179A1261BD2BE0C005CCE52 /* Foundation.framework */,
+				1179A1231BD2BBA6005CCE52 /* AVFoundation.framework */,
 				18C3776E01C97755587A0939 /* Pods.framework */,
 			);
 			name = Frameworks;
