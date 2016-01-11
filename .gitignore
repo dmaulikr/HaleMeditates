@@ -10,4 +10,5 @@ app/tests/coverage/
 .bower-*/
 .idea/
 ios/Pods/*
+ios/Hale\ Meditates.xcworkspace/xcuserdata/*
 
