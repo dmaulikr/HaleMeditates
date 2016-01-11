@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        setupParseAPI(launchOptions);
+        setViewController();
         UITabBar.appearance().tintColor = UIColor.whiteColor();
         return true
+    }
+    
+    private func setViewController() {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if let vc = UIUtil.getViewControllerFromStoryboard("MainTabBarController") as? UITabBarController {
+            self.window?.rootViewController = vc;
+        }
+        
+        self.window?.makeKeyAndVisible()
+    }
+    
+    private func setupParseAPI(launchOptions: [NSObject: AnyObject]?) {
+        Parse.enableLocalDatastore()
+        
+        Parse.setApplicationId("xffaG4Dm0LciMVY6xDMaJr8aqkpddEdyEF4UyQyN",
+            clientKey: "5gHHQLuxSAxrU90aSpMQvoeOknUohzsb7EMF5i8X")
+        
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
     }
 
     func applicationWillResignActive(application: UIApplication) {
